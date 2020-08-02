@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-02T09:10:35.077Z</updated>
+  <updated>2020-08-02T09:27:01.105Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/08/02/RSA/"/>
     <id>http://yoursite.com/2020/08/02/RSA/</id>
     <published>2020-08-02T08:02:49.000Z</published>
-    <updated>2020-08-02T09:10:35.077Z</updated>
+    <updated>2020-08-02T09:27:01.105Z</updated>
     
     <content type="html"><![CDATA[<h1 id="加密方法"><a href="#加密方法" class="headerlink" title="加密方法"></a>加密方法</h1><p>在1976年前，所有方法都是对称加密算法。</p><p>Alice想出一种可逆加密方法，把加密方法告诉Bob，Bob加密了消息把密码发给Alice，Alice根据加密方法解密。</p><p>要是别人截获了消息和加密方法，或者根据密码推测出加密方法，那么就能获得密码信息。</p><p>1976年，<a href="https://zh.wikipedia.org/wiki/迪菲-赫爾曼密鑰交換">Diffie–Hellman_key</a>提供了一种非堆成加密的思想。</p><p>Alice有两个密钥，公钥和私钥，把公钥告诉Bob，Bob加密了把消息把密码发给Alice，Alice用私钥解密。</p><p>非对称加密方法的好处是私钥是保存在电脑的，也就是无论别人窃取什么东西，没有私钥也无法解密。</p><p>RSA算法就是一种现在普遍使用的非对称加密算法。</p><h1 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h1><p><a href="https://zh.wikipedia.org/zh-cn/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95">维基百科-RSA算法</a></p><p>凭空变出两个质数$p,q$。</p><p>设$N=p\times q$</p><p>根据欧拉函数$r=\varphi(N)=(p-1)\times (q-1)$</p><p>选择一个小于$r$的整数$e$</p>]]></content>
     
