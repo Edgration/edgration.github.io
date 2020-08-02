@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>Hello World | Edt</title>
+  <title>RSA算法 | Edt</title>
 
   
     <link rel="apple-touch-icon" href="/images/website/favicon.png">
@@ -89,6 +89,36 @@
 <!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
 
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+            });
+          </script>
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+                tex2jax: {
+                  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                }
+              });
+          </script>
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Queue(function() {
+                  var all = MathJax.Hub.getAllJax(), i;
+                  for(i=0; i < all.length; i += 1) {
+                      all[i].SourceElement().parentNode.className += ' has-jax';
+                  }
+              });
+          </script>
+    
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
 
 
   
@@ -102,38 +132,85 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">Hello World</div>
+      <div class="post-title">RSA算法</div>
       <div class="post-attach">
-        <span class="post-pubtime">2020-08-01</span>
+        <span class="post-pubtime">2020-08-02</span>
         
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Algorithm/" title="查看 Algorithm 分类">
+                    <b>#</b> Algorithm
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                
+                <span class="span--tag">
+                  <a href="/tags/Math/" title="查看 Math 标签">
+                    <b>#</b> Math
+                  </a>
+                </span>
+                
+              </span>
+          
       </div>
       <div class="markdown-body">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h1 id="加密方法"><a href="#加密方法" class="headerlink" title="加密方法"></a>加密方法</h1><p>在1976年前，所有方法都是对称加密算法。</p>
+<p>Alice想出一种可逆加密方法，把加密方法告诉Bob，Bob加密了消息把密码发给Alice，Alice根据加密方法解密。</p>
+<p>要是别人截获了消息和加密方法，或者根据密码推测出加密方法，那么就能获得密码信息。</p>
+<p>1976年，<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/迪菲-赫爾曼密鑰交換">Diffie–Hellman_key</a>提供了一种非堆成加密的思想。</p>
+<p>Alice有两个密钥，公钥和私钥，把公钥告诉Bob，Bob加密了把消息把密码发给Alice，Alice用私钥解密。</p>
+<p>非对称加密方法的好处是私钥是保存在电脑的，也就是无论别人窃取什么东西，没有私钥也无法解密。</p>
+<p>RSA算法就是一种现在普遍使用的非对称加密算法。</p>
+<h1 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h1><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/RSA%E5%8A%A0%E5%AF%86%E6%BC%94%E7%AE%97%E6%B3%95">维基百科-RSA算法</a></p>
+<p>凭空变出两个质数$p,q$。</p>
+<p>设$N=p\times q$</p>
+<p>根据欧拉函数$r=\varphi(N)=(p-1)\times (q-1)$</p>
+<p>选择一个小于$r$的整数$e$</p>
 
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
+              <a href="/2020/08/01/ATCF-1/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>PREV</span>
+              </a>
+            
           </div>
           <div class="post-attach">
-            <span class="post-pubtime">2020-08-01</span>
+            <span class="post-pubtime">2020-08-02</span>
             
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Algorithm/" title="查看 Algorithm 分类">
+                        <b>#</b> Algorithm
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags" title="标签 | tags"></i>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/Math/" title="查看 Math 标签">
+                        <b>#</b> Math
+                      </a>
+                    </span>
+                    
+                  </span>
+              
           </div>
           <div class="post-foot-prev">
-            
-              <a href="/2020/08/01/ATCF-1/" target="_self">
-                <span>NEXT</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
             
           </div>
         </div>
@@ -143,7 +220,7 @@
   <div class="post-catalog" id="catalog">
     <div class="title">目录</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95"><span class="toc-text">加密方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RSA"><span class="toc-text">RSA</span></a></li></ol>
     </div>
   </div>
 
