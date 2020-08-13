@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-08T03:09:45.005Z</updated>
+  <updated>2020-08-13T17:26:25.831Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,24 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2020/08/08/test/"/>
-    <id>http://yoursite.com/2020/08/08/test/</id>
-    <published>2020-08-08T03:08:55.000Z</published>
-    <updated>2020-08-08T03:09:45.005Z</updated>
+    <title>记一次CF</title>
+    <link href="http://yoursite.com/2020/08/14/CF01/"/>
+    <id>http://yoursite.com/2020/08/14/CF01/</id>
+    <published>2020-08-13T16:46:55.000Z</published>
+    <updated>2020-08-13T17:26:25.831Z</updated>
     
-    <content type="html"><![CDATA[<p>vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIktTU2VydmVyIExBWCBHSUEgLSBUZW1wIiwNCiAgImFkZCI6ICJ2Mi1zLWNuLmtzbWVvdy5tb2UiLA0KICAicG9ydCI6ICI0NDMiLA0KICAiaWQiOiAiYTEzMmYyMWYtMzFjOS00NzdlLWE0MDgtOTFmNzA5ODhlZGI1IiwNCiAgImFpZCI6ICI2NCIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiL2Fya25pZ2h0cy1wdXJlc3RyZWFtLTMuanBnIiwNCiAgInRscyI6ICJ0bHMiDQp9<br>vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIktTU2VydmVyIExBWCBEaXJlY3QgLSBUZW1wIiwNCiAgImFkZCI6ICJ2Mi1zLmtzbWVvdy5tb2UiLA0KICAicG9ydCI6ICI0NDMiLA0KICAiaWQiOiAiYjBiYzVkNTItZDU3OS00OTQ5LTlkNDgtODI4NDg4MGQwMWNlIiwNCiAgImFpZCI6ICI2NCIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiIiwNCiAgInBhdGgiOiAiL2Fya25pZ2h0cy1wdXJlc3RyZWFtLTMuanBnIiwNCiAgInRscyI6ICJ0bHMiDQp9<br>vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIktTU2VydmVyIExBWCBDbG91ZEZsYXJlIC0gVGVtcCIsDQogICJhZGQiOiAidjItcy1jZi5rc21lb3cubW9lIiwNCiAgInBvcnQiOiAiNDQzIiwNCiAgImlkIjogIjY1ZjA0OGU5LTFmMTctNGUyYi04N2Y1LTBiZDQyMmYxOTEwOCIsDQogICJhaWQiOiAiNjQiLA0KICAibmV0IjogIndzIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIi9hcmtuaWdodHMtcHVyZXN0cmVhbS0zLmpwZyIsDQogICJ0bHMiOiAidGxzIg0KfQ==</p><p>3202e510-f52e-464e-9599-c4aebd5a16c5</p>]]></content>
+    <content type="html"><![CDATA[<p>low-level.jpg：</p><p><img src="/images/CF01/rating.png" alt="CFRound664Div2"></p><p>I got a Wrong Answer on A, Failed in system testing in problem B since the algorithm I wrote is ridiculous, which I can’t explain the reason accurately. Despite to the failure I made, the Problem C is much simple and ordinary, which only cost me 10 minute to read and wrote. However I did not reason the problem carefully so I spend too much time on writing a wrong solution, even if I came up with the correct solution later, I did not finish it due to the structure of the program is hard to change and I have to fix the bugs in the program.</p><p>A题瞎写WA一次；B题瞎写FST on Test45，最后发现自己的算法假的离谱，一个5×5的矩阵就能叉掉（就算如此还混过了pretest）；D题瞎写，计数的时候要把所用东西加起来，ans的初始值写-1（写0就行了），而且在莫名其妙的位置还爆了个int（两个1e5乘起来了）。</p><p>下次要注意细节了，不能再想当然。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIktTU2VydmVyIExBWCBHSUEgLSBUZW1wIiwNCiAgImFkZCI6ICJ2Mi1zLWNuLmtzbWVvdy5tb2UiLA0KICAicG9ydCI6ICI0N
+        &lt;p&gt;low-level.jpg：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CF01/rating.png&quot; alt=&quot;CFRound664Div2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I got a Wrong Answer on A, Failed in system testing
       
     
     </summary>
     
     
+      <category term="Code" scheme="http://yoursite.com/categories/Code/"/>
+    
+    
+      <category term="Codeforces" scheme="http://yoursite.com/tags/Codeforces/"/>
     
   </entry>
   
