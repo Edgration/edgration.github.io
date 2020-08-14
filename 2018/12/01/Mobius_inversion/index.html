@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta name="author" content="zchengsite, 1451426471@qq.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  <title>莫比乌斯反演 | Edt</title>
+
+  
+    <link rel="apple-touch-icon" href="/images/website/favicon.png">
+    <link rel="icon" href="/images/website/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="Edt" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/"><img src="/images/website/avatar.png" alt=""></a>
+    <div class="nickname"><a href="/">Edt</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">朋友</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+            });
+          </script>
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+                tex2jax: {
+                  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                }
+              });
+          </script>
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Queue(function() {
+                  var all = MathJax.Hub.getAllJax(), i;
+                  for(i=0; i < all.length; i += 1) {
+                      all[i].SourceElement().parentNode.className += ' has-jax';
+                  }
+              });
+          </script>
+    
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">莫比乌斯反演</div>
+      <div class="post-attach">
+        <span class="post-pubtime">2018-12-01</span>
+        
+      </div>
+      <div class="markdown-body">
+        <h1 id="Something-useful"><a href="#Something-useful" class="headerlink" title="Something useful"></a>Something useful</h1><ol start='' >
+<li>$\lfloor \frac{n}{i}\rfloor$只有$O(\sqrt n)$种取值</li>
+<li>对于$i$，$\left\lfloor\frac{n}{\left\lfloor\frac{n}{i}\right\rfloor}\right\rfloor$是与$i$被$n$除并下取整取值相同的一段区间的右端点</li>
+<li>$\left\lfloor\frac{n}{ab}\right\rfloor=\left\lfloor\frac{\left\lfloor\frac{n}{a}\right\rfloor}{b}\right\rfloor=\left\lfloor\frac{\left\lfloor\frac{n}{b}\right\rfloor}{a}\right\rfloor$</li>
+</ol>
+
+<h1 id="Mobius-function"><a href="#Mobius-function" class="headerlink" title="Möbius function"></a>Möbius function</h1><p>
+用$\mu$表示莫比乌斯函数。
+
+$$n=p_1^{q_1}p_2^{q_2}...p_k^{qk}\\\mu(n)=\begin{cases} 1 & (x=1) &\\ 0 & (\max_{i}^{n} p_i>1) \\ (-1)^{k} & \text{otherwise}\end{cases}$$
+</p>
+
+<p>一个有用的性质
+$$\sum_{d|n}\mu(d)=[n=1]$$
+证明：考虑$d|n$相当于在$n$的因子中选择若干个，然后把这些因子组成的数的$\mu$加起来，如果有一个数的次数大于$1$，$\mu = 0$对答案没有贡献，所以这个$\mu$值只与选择的质因子的个数的奇偶性有关，也就是说只考虑每个质因子是否选择。
+$$\text{if}~~~n =1~~~\mu(1)=1\\\text{else}~~~n=p_1^{q_1}p_2^{q_2}...p_k^{qk}\\\sum_{d|n}\mu(d)=\binom{k}{0}-\binom{k}{1}+\binom{k}{2}-\binom{k}{3}...+(-1)^k\binom{k}{k}\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}\\\because (1+x)^{k}=\sum_{i=0}^{k}\binom{k}{i}x^i\\\therefore x=-1\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}=(1+(-1))^k = 0\\$$
+</p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">IL <span class="keyword">void</span> <span class="title">Sieve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; maxn; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!flag[i]) &#123;</span><br><span class="line">            prime[++prime[<span class="number">0</span>]] = i;</span><br><span class="line">            mu[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= prime[<span class="number">0</span>] &amp;&amp; i * prime[j] &lt; maxn; ++j) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = i * prime[j]; flag[v] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> mu[v] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Dirichlet-product"><a href="#Dirichlet-product" class="headerlink" title="Dirichlet product"></a>Dirichlet product</h1><p>记$f,g$为数论函数，定义
+$$h=f*g \rightarrow h(n)=\sum_{d|n, d > 0}f(d)\times g(\frac{n}{d})\\$$
+狄利克雷卷积满足<strong>交换律</strong>，<strong>结合律</strong>和<strong>分配率</strong>。</p>
+
+<h3 id="常见的积性函数"><a href="#常见的积性函数" class="headerlink" title="常见的积性函数:"></a>常见的积性函数:</h3><ol start='' >
+<li>$\mu$，莫比乌斯函数。</li>
+<li>$\varphi$ ，欧拉函数。</li>
+<li>$d$ ，约数个数。$d(n)$表示 $n$ 的约数的个数。</li>
+<li>$\sigma$ ，约数和函数。$\sigma(n)$表示 $n$ 的各个约数之和。</li>
+
+</ol>
+
+<h3 id="常见的完全积性函数"><a href="#常见的完全积性函数" class="headerlink" title="常见的完全积性函数:"></a>常见的完全积性函数:</h3><ol start='5' >
+<li>$\epsilon$ ，元函数。 $\epsilon(x)=[x=1]$</li>
+<li>$I$ ，恒等函数。 $I(n)=1$</li>
+<li>$id$ ，单位函数。$id(n)=n$</li>
+
+</ol>
+
+<h3 id="常用的狄利克雷卷积"><a href="#常用的狄利克雷卷积" class="headerlink" title="常用的狄利克雷卷积:"></a>常用的狄利克雷卷积:</h3><script type="math/tex; mode=display">\begin{cases}I * \mu = \epsilon\\\mu * id = \varphi\\I * id = \sigma\\I * I = d\\I * \varphi = id\end{cases}</script><h1 id="Mobius-inversion-formula"><a href="#Mobius-inversion-formula" class="headerlink" title="Möbius inversion formula"></a>Möbius inversion formula</h1><p>
+对于数论函数$f, g$
+$$\begin{aligned}f(n)&=\sum_{d|n}g(d)\\f &= g * I\\f * \mu &= g * I * \mu\\f * \mu &= g * (I * \mu)\\f * \mu &=g * \epsilon\\f * \mu &= g\\\end{aligned}$$
+然后得到了
+$$g(n)=\sum_{d|n}f(d)\times \mu(\frac{n}{d})$$
+对于另一个式子
+$$\begin{aligned}f(n)&=\sum_{n|d}^{d\leq L}g(d)\\g(n)&=\sum_{n|d}^{d\leq L}f(d)\times \mu(\frac{d}{n})\end{aligned}$$
+</p>
+
+<h2 id="Tricks"><a href="#Tricks" class="headerlink" title="Tricks"></a>Tricks</h2><ol start='' >
+<li><p>$\sum_{i=1}^{n}\sum_{j=1}^{m}[(i,j)=d]$</p>
+<p>设$f(d)$表示集合中$(i,j)=d$的倍数的数的$(i,j)$的个数，$g(d)$表示$(i,j)=d$的数的个数（我们要求的答案是$g(d)$）。
+$$\begin{aligned}f(d)&=\lfloor{\frac{n}{d}}\rfloor\lfloor\frac{m}{d}\rfloor\\&=\sum_{d|t}^{\min(n,m)}g(t)\\g(d)&=\sum_{d|t}^{\min(n,m)}f(t) \mu(\frac{t}{d})\\&=\sum_{d|t}^{\min(n,m)}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\mu(\frac{t}{d})\end{aligned}$$
+<strong>小技巧:</strong></p>
+<p>记$\sigma(n)$为$n$的约数个数，因为$I * id = \sigma$</p>
+</li>
+</ol>
+
+<p><p>$$\sigma(nm)=\sum_{i|n}^{n}\sum_{j|m}^{m}[(i,j)=1]$$</p></p>
+<ol start='2' >
+<li><p>$\sum_{i}^{n}\sum_{j=1}^{m}[(i,j)\in \text{Prime}]$
+$$\sum_{p\in Prime}\sum_{p|t}^{\min(n,m)}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\mu(\frac{t}{p})$$
+对于所有$t=p(Prime) \times \frac{t}{p}$，预处理$\text{pre[t]}$。
+$$\begin{aligned}\text{pre[t]}&=\sum_{p|t}\mu(\frac{t}{p})\\ans&=\sum_{t}^{\min(n,m)}\text{pre[t]}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\end{aligned}$$</p>
+<p>预处理$\text{pre}$可以枚举质数然后用调和级数，同时也可以在线筛的时候算。</p>
+<p>考虑$\text{prime[j]} \not| i$，加入$\text{prime[j]}$会让$\mu\to -u$，之前的$f[i]$变为$-f[i]$，贡献为$\mu[i]$，$f[i \times prime[j]]=-f[i]+mu[i]$</p>
+<p>如果$\text{prime[j]}| i$，加入$\text{prime[j]}$让除了$i$的所有因子上有一个$prime[j]^2$，此时$f[i\times prime[j]]=mu[i]$</p>
+</li>
+<li><p>$\sum_{i=1}^{n}\sum_{j=1}^{m}(i,j)^k$
+$$\sum_{p}\sum_{p|t}^{\min(n,m)}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\mu(\frac{t}{p})p^k\\\sum_{p}p^k\sum_{p|t}^{\min(n,m)}\mu(\frac{t}{p})\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor$$
+同上，我们可以预处理$\text{pre[t]}$
+$$\text{pre[t]}=\sum_{d|t}d^k\mu(\frac{t}{d})$$
+由于$\mu$是积性函数，$d^k$也是积性函数，所以$pre[t]$是积性函数</p>
+<p>对于$\text{pre}[p^x], p \in \text{Prime}$，由于$\mu(p^2)$以上都是0，对答案无贡献。
+$$\begin{aligned}pre(p^x)&=(p^{x}\cdot\mu(1) + p^{k(x-1)}\cdot \mu(p)) & p \in \text{Prime}\\\end{aligned}$$
+一般地
+$$\begin{aligned}pre(n)&= \sum_{d \mid n}d^k\mu(\frac T d)\\&= \prod_{p_i} pre(p_i^{x_i})\\&= \prod_{p_i} (p_i^{x_i}\cdot\mu(1) + p_i^{k(x_i-1)}\cdot \mu(p_i))\\&= \prod_{p_i} p_i^{k(x_i-1)}(p_i^k-1)\end{aligned}$$</p>
+</li>
+
+</ol>
+
+<h1 id="Du’s-Sieve"><a href="#Du’s-Sieve" class="headerlink" title="Du’s Sieve"></a>Du’s Sieve</h1><ul>
+<li>$\mu$前缀和</li>
+</ul>
+
+<p><p>$$\begin{aligned}\sum\limits_{i=1}^n\sum\limits_{d|i}\mu(d)&=1\\\sum\limits_{i=1}^n\sum\limits_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(j)&=1\\\sum_{i=1}^{n}\mu(i)&=1-\sum_{i=2}^{n}\sum_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(j)\end{aligned}$$
+   考虑右边式子，由于是${\left\lfloor\frac{n}{i}\right\rfloor}$，所以只有$\sqrt n$种不同的取值，$\sum_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(j)$是一个前缀和的性质，于是可以递归求，求的过程中用hash表实现记忆化防止复杂度退化。</p></p>
+<p><p>   时间复杂度</p>
+<script type="math/tex; mode=display">\begin{aligned} &\sum_{i=1}^{\sqrt n}O(\sqrt i) + \sum_{i=1}^{n}O(\sqrt \frac{n}{i}) \\ &=O(\int_{1}^{n}\sqrt{\frac{n}{x}}dx)\\ &=O(n^{\frac{3}{4}}) \end{aligned}</script><p>   注意到$n$比较小的时候可以线性筛出来。 </p>
+<script type="math/tex; mode=display">O\left(B+\sum\limits_{i=1}^{\frac nB}\sqrt{\frac ni}\right)=O\left(B+\frac n{\sqrt{B}}\right)</script><p>   根据均值不等式当$B=n^{\frac{2}{3}}$有最低复杂度$O(n^{\frac{2}{3}})$&lt;/p&gt;</p>
+<ul>
+<li>$\varphi$前缀和
+$$\begin{aligned}\because \sum_{d|n}\varphi(d)&=n\\\therefore \sum_{i=1}^{n}\sum_{d|i}\varphi(d)&=\sum_{i=1}^{n}\\&=\frac{n(n+1)}{2}\\\sum_{i=1}^{n}\varphi(i)&=\frac{n(n-1)}{2}-\sum_{i=2}^{n}\sum_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\varphi(j)\end{aligned}$$
+做法和复杂度同上。</li>
+</ul>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sieveMu</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; Limit) <span class="keyword">return</span> mu[n];</span><br><span class="line">    <span class="keyword">if</span> (map_mu.count(n)) <span class="keyword">return</span> map_mu[n];</span><br><span class="line">    <span class="keyword">int</span> ans = (n &gt;= <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">2</span>, j; i &lt;= n; i = j + <span class="number">1</span>) &#123;</span><br><span class="line">        j = (n / (n / i));</span><br><span class="line">        ans -= sieveMu(n / i) * (j - i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> map_mu[n] = ans; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">sievePhi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; Limit) <span class="keyword">return</span> phi[n];</span><br><span class="line">    <span class="keyword">if</span> (map_phi.count(n)) <span class="keyword">return</span> map_phi[n];</span><br><span class="line">    ll ans = <span class="number">1l</span>l * n * ((ll)(n) + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">2</span>, j; i &lt;= n; i = j + <span class="number">1</span>) &#123;</span><br><span class="line">        j = (n / (n / i));</span><br><span class="line">        ans -= <span class="number">1l</span>l * sievePhi(n / i) * (j - i + <span class="number">1</span>); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> map_phi[n] = ans; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2018/11/23/primetest/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>PREV</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">2018-12-01</span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2020/08/01/ATCF-1/" target="_self">
+                <span>NEXT</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Something-useful"><span class="toc-text">Something useful</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mobius-function"><span class="toc-text">Möbius function</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dirichlet-product"><span class="toc-text">Dirichlet product</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-text">常见的积性函数:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%AE%8C%E5%85%A8%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-text">常见的完全积性函数:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E5%8D%B7%E7%A7%AF"><span class="toc-text">常用的狄利克雷卷积:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mobius-inversion-formula"><span class="toc-text">Möbius inversion formula</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tricks"><span class="toc-text">Tricks</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Du%E2%80%99s-Sieve"><span class="toc-text">Du’s Sieve</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://edgration.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
+  
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="email" href="edgrational@gmail.com">
+            <i class="iconfont icon-envelope"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="facebook" target="_blank" rel="noopener" href="https://www.facebook.com/edgration.xiang/">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" target="_blank" rel="noopener" href="https://twitter.com/edgration">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" href="">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/edgration">Copyright © Edt 2020</a>
+    </div>
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta name="author" content="zchengsite, 1451426471@qq.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  <title>素数判定 | Edt</title>
+
+  
+    <link rel="apple-touch-icon" href="/images/website/favicon.png">
+    <link rel="icon" href="/images/website/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="Edt" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/"><img src="/images/website/avatar.png" alt=""></a>
+    <div class="nickname"><a href="/">Edt</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">朋友</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+            });
+          </script>
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+                tex2jax: {
+                  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                }
+              });
+          </script>
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Queue(function() {
+                  var all = MathJax.Hub.getAllJax(), i;
+                  for(i=0; i < all.length; i += 1) {
+                      all[i].SourceElement().parentNode.className += ' has-jax';
+                  }
+              });
+          </script>
+    
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">素数判定</div>
+      <div class="post-attach">
+        <span class="post-pubtime">2018-11-23</span>
+        
+      </div>
+      <div class="markdown-body">
+        <h1 id="Quadratic-residue"><a href="#Quadratic-residue" class="headerlink" title="Quadratic residue"></a>Quadratic residue</h1><p>二次剩余</p>
+<p><strong>定义：</strong></p>
+<p>当存在某个$x$，式子$x^2\equiv d \pmod p$成立，称<strong>&quot;$x$是$d$是模$p$下的二次剩余&quot;</strong>。</p>
+<p><strong>性质：</strong></p>
+
+<ul>
+<li>对于一个数$0 \sim p - 1$的数，因为$x^2 \equiv (p-x)^2$，所以关于$p$的二次剩余的不超过$\frac{p}{2}+1$个。</li>
+<li>二次剩余成二次剩余也是二次剩余</li>
+
+</ul>
+
+<h1 id="Miller-Rabin"><a href="#Miller-Rabin" class="headerlink" title="Miller-Rabin"></a>Miller-Rabin</h1><p>考虑一种判断质数的方法，根据费马小定理，$a^{p-1} \equiv 1 \pmod p$。为了检测$p$是否为质数，可以带入几个数，判断费马小定理是否成立，如果都成立，那么可以认为这个数是质数。</p>
+<p>但是有一些数没办法判断出来，如$561=3\times11\times17$，<strong>这一类数叫做Carmichael数（卡迈尔克数）。</strong>这一类数虽然不多，但是在$1e8$内还是有$255$个，会严重影响算法的正确率，Miller-Rabin这个算法便诞生了。</p>
+<p>设要检测的数为$n$，$n$为奇数。</p>
+$$n=r\times 2^t + 1$$
+<p>根据$\text{Chinese Remainder Theorem}$，如果$n$是质数，$1$的在模$n$下二次剩余只有$1$和$n-1$。例如$6^2\equiv -1\pmod {37}$，$6^3 \equiv 1 \pmod {37}$，反之对于非质数会有更多其他的数，例如$11 \not \equiv -1$，$11^2 \equiv 1 \pmod {15}$，说明$15$是非质数。</p>
+<p>对于<strong>不被$n$整除</strong>的一个数$A$，如果$n$为质数，根据费马小，有$A^{n-1} \equiv 1\to A^{r\times 2^t} \equiv 1\pmod n$。</p>
+<p>考虑这个$1$是怎么来的，那么根据二次剩余，下面两个条件之一必然成立。</p>
+<ul>
+<li>$A^r \equiv1 \pmod n$</li>
+<li>$\exists_{k=0}^{t-1}A^{r2^k} \equiv -1 \pmod n$</li>
+</ul>
+
+<p>于是我们检测到第一个$A^{r2^{k+1}}\equiv1$，那么$A^{r2^{k}} \equiv -1 \pmod n$。如果不是，则说明$n$不是质数。所以可以随机一个底数$A$，或者是取前几个小质数作为$A$。</p>
+<p>对于一个奇合数$x$，它的证据个数有$\frac{x-1}{2}$个，对于一个证据，检测出的概率是$\frac{1}{2}$。如果选择了$n$个底数，那么正确的概率约为$2^{-n}$。</p>
+<p>对于$1e18$的范围的数，取前12个质数就可以正确了。</p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> pri[] = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">37</span>&#125;;</span><br><span class="line"><span class="function">IL <span class="keyword">bool</span> <span class="title">Miller_Rabin</span><span class="params">(ll n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) <span class="keyword">if</span> (n % pri[i] == <span class="number">0</span>) <span class="keyword">return</span> n == pri[i];</span><br><span class="line">    ll r, x, y; <span class="keyword">int</span> t;</span><br><span class="line">    <span class="keyword">for</span> (r = n - <span class="number">1</span>, t = <span class="number">0</span>; ~r &amp; <span class="number">1</span>; r &gt;&gt;= <span class="number">1</span>, t++);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i) &#123;</span><br><span class="line">        x = fpw(pri[i], r, n); </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; t &amp;&amp; x &gt; <span class="number">1</span>; ++j) &#123;</span><br><span class="line">            y = mul(x, x, n);</span><br><span class="line">            <span class="keyword">if</span> (y == <span class="number">1</span> &amp;&amp; x != n - <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">            x = y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (x != <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Birthday-problem"><a href="#Birthday-problem" class="headerlink" title="Birthday problem"></a>Birthday problem</h1><p>生日悖论，23个人中两个人有相同生日的概率大于$50\%$。</p>
+<p>对于<strong>值域为$P$</strong>，出现<strong>至少两个相同的数</strong>的概率为$1-\frac{P-1}{P}^{\binom{n}{2}}$</p>
+
+<h1 id="Pollard’s-Rho"><a href="#Pollard’s-Rho" class="headerlink" title="Pollard’s Rho"></a>Pollard’s Rho</h1><p>对于一个非质数$n$，存在$a_1$和$a_2$使得$n=a_1\times a_2$，那么递归分解$a_1$和$a_2$就可以实现质因数分解。</p>
+<p>假设$a_1$是$n$的因子，暴力地可以随机一个数然后判断是否为$a_1$，这样找到$a1$的概率为$\frac{1}{n}$实在太小。如果得到了两个数$x$和$y$，其中$x\equiv y \pmod {a_1}$且$x\not \equiv y \pmod n$。如果$gcd(x−y,n)$不为$1$或$n$，那么可以得到 $n$ 的一个非平凡因子。</p>
+<p>往一个纸带上填数，值域为$P$，出现有两个数就停下（显然步数最大为$P+1$)，期望的长度是多少？一共存在$\binom{len}{len-1}$对数，而每队相等的概率为$\frac{1}{p}$</p>
+$$len\times (len-1)\times \frac{1}{P}=1\\len\approx\sqrt{P}$$
+<p>我们可以算出$len$的期望长度为$\sqrt P$，也就是在模$n$意义下的期望长度为$\sqrt n$。</p>
+<p>对于一组$(x,y)$，$y\equiv x\pmod a$的概率为$O(\frac{1}{n})$，根据生日悖论，如果选出大于$\sqrt n$组数，其中有两个相等的概率大于$\frac{1}{2}$，而后会更加快速地递增。</p>
+<p>如果我们每次合理的随机选择$x,y$，使得$x-y$不相等，在大小为$n$的集合中，选出合理的$(x,y)$概率为$\sqrt n$，因为集合大小为$\sqrt n$，那么找到相等的概率为$\sqrt {\sqrt n}$，也就说$O(n^{\frac{1}{4}})$。</p>
+<p>我们构造一个随机的函数$f(x)$使得$f(x)$在$\text{mod p}$意义下几乎随机，不断将$x$变为$f(x)$，$x$就会变为一个随机的数，经过测试，<strong>当$f(x)=x^2+c$的时候很合适</strong>。经过若干步以后一定会走到<strong>一个定长的环</strong>中。最开始$x,y$设为随机数，在每一步的操作中把$x$变为$f(x)$，$y$变为$f(f(y))$，检查$gcd(y-x,n)$。这样$y$每次比$x$多走一步，经过环长步以后$x,y$会到达相同位置。</p>
+<p>
+因为对于每一步都要求一遍$gcd$，那么复杂度为$O(n^\frac{1}{4}\log n)$。
+</p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">IL ll <span class="title">func</span><span class="params">(ll x, ll mod, ll a)</span> </span>&#123; <span class="keyword">return</span> (mul(x, x, mod) + a) % mod; &#125;</span><br><span class="line"><span class="function">IL ll <span class="title">Find</span><span class="params">(ll n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> Test_Limit = <span class="number">150000</span>;</span><br><span class="line">    ll a = rand(), x, y; <span class="keyword">int</span> tim = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">12</span>; ++i) <span class="keyword">if</span> (n % pri[i] == <span class="number">0</span>) <span class="keyword">return</span> pri[i];</span><br><span class="line">    x = func(rand(), n, a), y = x;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        ull g = gcd((x - y + n) % n, n);</span><br><span class="line">        <span class="keyword">if</span> (g != <span class="number">1</span> &amp;&amp; g != n) <span class="keyword">return</span> g; </span><br><span class="line">        x = func(x, n, a), y = func(func(y, n, a), n, a); ++tim; </span><br><span class="line">    &#125; <span class="keyword">while</span> (y != x &amp;&amp; tim &lt;= Test_Limit);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Pollard_s_Rho</span><span class="params">(ll n, ll &amp;a)</span> </span>&#123;</span><br><span class="line">    ll d; <span class="keyword">if</span> (n &lt;= a) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">while</span> (!(n &amp; <span class="number">1</span>)) n &gt;&gt;= <span class="number">1</span>, a = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span> || Miller_Rabin(n)) &#123; a = <span class="built_in">max</span>(a, n); <span class="keyword">return</span>; &#125;</span><br><span class="line">    <span class="keyword">for</span> (d = Find(n); d == <span class="number">-1</span>; d = Find(n));</span><br><span class="line">    <span class="keyword">if</span> (d &gt; n / d) d = n / d; Pollard_s_Rho(d, a); Pollard_s_Rho(n / d, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Pollard’s-Rho-Update"><a href="#Pollard’s-Rho-Update" class="headerlink" title="Pollard’s Rho Update"></a>Pollard’s Rho Update</h1><p>但这并不是$\text{Pollard's Prho}$能达到的最优复杂度，可以优化为$O(n^\frac{1}{4})$。</p>
+<p>首先$\gcd$的写法可以加上一点常数优化。</p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">IL ll <span class="title">gcd</span><span class="params">(ll x, ll y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> Shift = ctzll(x | y);</span><br><span class="line">    y &gt;&gt;= ctzll(y);</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        x &gt;&gt;= ctzll(x); </span><br><span class="line">        <span class="keyword">if</span> (x &lt; y) swap(x, y);</span><br><span class="line">        x -= y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> y &lt;&lt; Shift;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据奇偶性，每隔两次$x$至少要除$2$，而换成非递归会快一点。</p>
+
+<p>
+我们可以注意到$\gcd(t,n) | gcd(tq,n)$， 设定一个步长$M$，固定$x$，$y$一共跳$M$步，把每一步的$y-x$相等然后取$gcd$。虽然还是遍历了$\sqrt n$个元素，但是每隔$M$次取一次gcd可以降低复杂度，使得它为$O(\frac{n^{\frac{1}{4}}}{M}\times \log n)$。
+</p>
+
+<p><img src="/images/PR/PR.png" alt=""></p>
+<p>如上图所示，图中的$Y$将从$X$跳到$2^{l+1}$的位置，因为之前<strong>已经算过蓝色部分并没有得到结果</strong>，那么因为图中的<strong>红色部分和蓝色部分等长，重复算红色部分没有意义</strong>，$Y$可以直接跳到现在这个位置；$Y$现在从图中$Y$的位置开始，每次跳$M$步，把每一步的$y-x$乘起来然后和$n$取$\gcd$检验。同样的，如果不是$1$或者是$n$说明找到了直接return；如果是$1$，视为没有找到；如果是$n$，可能这个$n$是由前面的几个数相乘得到的，也可能是走完了一个环，此时$x=y,gcd(y-x,n)=n$，那么我们需要再走一遍$M$这么长，判断中间是否出现结果，找到答案然后返回。</p>
+<p> 具体实现看代码（unsigned long long和__uint128_t真快)。</p>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ctzll __builtin_ctzll</span></span><br><span class="line"><span class="keyword">namespace</span> Rho &#123;</span><br><span class="line">    <span class="function">IL ll <span class="title">gcd</span><span class="params">(ll x, ll y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> Shift = ctzll(x | y);</span><br><span class="line">        y &gt;&gt;= ctzll(y);</span><br><span class="line">        <span class="keyword">while</span> (x) &#123;</span><br><span class="line">            x &gt;&gt;= ctzll(x);</span><br><span class="line">            <span class="keyword">if</span> (x &lt; y) swap(x, y);</span><br><span class="line">            x -= y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> y &lt;&lt; Shift;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">IL ll <span class="title">func</span><span class="params">(ll x, ll Mod, ll c)</span> </span>&#123; <span class="keyword">return</span> (mul(x, x, Mod) + c) % Mod; &#125;</span><br><span class="line">    <span class="function">IL ll <span class="title">Find</span><span class="params">(ll n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> Step = <span class="number">1</span> &lt;&lt; <span class="number">9</span>; <span class="keyword">int</span> c = rand();</span><br><span class="line">        ll x, y, temp; x = y = rand() % n; </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; ; l &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            x = y; </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; ++i) y = func(y, n, c);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; l; k += Step) &#123;</span><br><span class="line">                ll Prod_g = <span class="number">1</span>;</span><br><span class="line">                temp = y;</span><br><span class="line">                <span class="keyword">int</span> rem = <span class="built_in">min</span>(l - k, Step);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rem; ++i) y = func(y, n, c), Prod_g = mul(Prod_g, (y + n - x) % n, n);</span><br><span class="line">                Prod_g = gcd(Prod_g, n);</span><br><span class="line">                <span class="keyword">if</span> (Prod_g == <span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span> (Prod_g == n) <span class="keyword">for</span> (y = temp, Prod_g = <span class="number">1</span>; Prod_g == <span class="number">1</span>; ) y = func(y, n, c), Prod_g = gcd(y + n - x, n); </span><br><span class="line">                <span class="keyword">return</span> Prod_g;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;           </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="function">IL <span class="keyword">void</span> <span class="title">Pollard_s_Rho</span><span class="params">(ll n)</span> </span>&#123;&#125; <span class="comment">// 同上</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">2018-11-23</span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2018/12/01/Mobius_inversion/" target="_self">
+                <span>NEXT</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Quadratic-residue"><span class="toc-text">Quadratic residue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Miller-Rabin"><span class="toc-text">Miller-Rabin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Birthday-problem"><span class="toc-text">Birthday problem</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pollard%E2%80%99s-Rho"><span class="toc-text">Pollard’s Rho</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pollard%E2%80%99s-Rho-Update"><span class="toc-text">Pollard’s Rho Update</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://edgration.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
+  
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="email" href="edgrational@gmail.com">
+            <i class="iconfont icon-envelope"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="facebook" target="_blank" rel="noopener" href="https://www.facebook.com/edgration.xiang/">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" target="_blank" rel="noopener" href="https://twitter.com/edgration">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" href="">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="rss" href="/atom.xml">
+            <i class="iconfont icon-rss"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/edgration">Copyright © Edt 2020</a>
+    </div>
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </body>
+</html>
