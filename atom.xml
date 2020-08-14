@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-14T17:38:19.825Z</updated>
+  <updated>2020-08-14T19:02:34.747Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,21 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CFEDU93</title>
+    <link href="http://yoursite.com/2020/08/15/CFEDU93/"/>
+    <id>http://yoursite.com/2020/08/15/CFEDU93/</id>
+    <published>2020-08-14T18:46:55.000Z</published>
+    <updated>2020-08-14T19:02:34.747Z</updated>
+    
+    <content type="html"><![CDATA[<p>Rating.png:</p><p><img src="/images/CFEDU93/rating.png" alt="CFRoundEDU93"></p><p>正常发挥吧。毕竟就这水平。<br>AB没啥好说的，读题速度要是快点就好了。<br>C题不知道在想啥。想了一堆奇怪的东西（觉得区间是不交，是包含的，然后求每个数在的最小满足条件的区间就好了），然后发现这东西就是个错的（eg:03030）。莫名其妙花了好久，数组没清对还WA了一下。<br>D题做的挺慢的，想当然写个贪心然后WA。然后想了好久把才贪心叉掉。(eg: R:5 G:4 B:4,3)。就是两个较小的数相同的时候，选其中的一个是不对的。（R和G选了，B自己剩下两个没法配对）。然后改了个DP花了半个小时，虽然水的没办法，不过因为好久没写过DP了，勉强也能接受。<br>然后就只有半小时了，读了E和F。感觉比较麻烦，比赛时间是写不完了。但是应该都是可做题，这几天找个时间写一下。<br>发现最近学习效率都不太行，还是要高效一点。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Rating.png:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/CFEDU93/rating.png&quot; alt=&quot;CFRoundEDU93&quot;&gt;&lt;/p&gt;
+&lt;p&gt;正常发挥吧。毕竟就这水平。&lt;br&gt;AB没啥好说的，读题速度要是快点就好了。&lt;br&gt;C题不知道在想啥。想了一
+      
+    
+    </summary>
+    
+    
+      <category term="Code" scheme="http://yoursite.com/categories/Code/"/>
+    
+    
+      <category term="Codeforces" scheme="http://yoursite.com/tags/Codeforces/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CF664D2</title>
     <link href="http://yoursite.com/2020/08/14/CF664D2/"/>
     <id>http://yoursite.com/2020/08/14/CF664D2/</id>
     <published>2020-08-13T16:46:55.000Z</published>
-    <updated>2020-08-14T17:38:19.825Z</updated>
+    <updated>2020-08-14T19:03:53.119Z</updated>
     
-    <content type="html"><![CDATA[<p>SB.jpg：</p><p><img src="/images/CF01/rating.png" alt="CFRound664Div2"></p><p>A题瞎写WA一次；B题瞎写FST on Test45，最后发现自己的算法假的离谱，一个5×5的矩阵就能叉掉（就算如此还混过了pretest）；D题瞎写，计数的时候要把所用东西加起来，ans的初始值写-1（写0就行了），而且在莫名其妙的位置还爆了个int（两个1e5乘起来了）。</p><p>下次要注意细节了，不能再想当然。</p><p>最近找时间把AGC的BCDE写一下。</p>]]></content>
+    <content type="html"><![CDATA[<p>SB.jpg：</p><p><img src="/images/CF664D2/rating.png" alt="CFRound664Div2"></p><p>A题瞎写WA一次；B题瞎写FST on Test45，最后发现自己的算法假的离谱，一个5×5的矩阵就能叉掉（就算如此还混过了pretest）；D题瞎写，计数的时候要把所用东西加起来，ans的初始值写-1（写0就行了），而且在莫名其妙的位置还爆了个int（两个1e5乘起来了）。</p><p>下次要注意细节了，不能再想当然。</p><p>最近找时间把AGC的BCDE写一下。</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;SB.jpg：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/CF01/rating.png&quot; alt=&quot;CFRound664Div2&quot;&gt;&lt;/p&gt;
-&lt;p&gt;A题瞎写WA一次；B题瞎写FST on Test45，最后发现自己的算法假的离谱，一个5×5的矩阵就能叉掉（就算如此
+&lt;p&gt;&lt;img src=&quot;/images/CF664D2/rating.png&quot; alt=&quot;CFRound664Div2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;A题瞎写WA一次；B题瞎写FST on Test45，最后发现自己的算法假的离谱，一个5×5的矩阵就能叉掉（就
       
     
     </summary>
