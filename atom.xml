@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-15T14:24:23.574Z</updated>
+  <updated>2020-08-15T15:31:29.809Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/08/15/ABC176/"/>
     <id>http://yoursite.com/2020/08/15/ABC176/</id>
     <published>2020-08-15T13:50:10.000Z</published>
-    <updated>2020-08-15T14:24:23.574Z</updated>
+    <updated>2020-08-15T15:31:29.809Z</updated>
     
     <content type="html"><![CDATA[<h1 id="ABC176"><a href="#ABC176" class="headerlink" title="ABC176"></a><a href="https://atcoder.jp/contests/abc175">ABC176</a></h1><p>Rating:</p><p><img src="/images/ABC176/rating.PNG" alt=""></p><p>正常发挥，甚至打的还挺好（因为F题比较难所以大家都是ABCDE），performance第一次上2000，虽然上分还是很缓慢。F题比赛上写出来的可能性不大。但是其实写前面几道题可以再快一点，不过根据我现在的水平，还是比较满意的。</p><p>C题WA了一次的原因是没看到输入的数据可能有负数。（其实把<code>x=read()</code>改成<code>x=abs(read())</code>就能过了），还是属于看题不认真（这个和英文水平低下好像没有关系）。</p><p>然后D题又想当然了，一个n个点n条边，每个点出度入度都为1的图不一定是一个环。可能是多个环。（详见APIO2018 铁人三项）。2018年搞不清白的东西现在还搞不清白。</p><p><img src="/images/ABC176/sticker.png" width="15%"></p><p>每个环单独做一次就好了，还好样例里面有两个环的情况不然可能就wa死在上面了。改代码花了点时间。</p><p>然后E题是个简单DP，好在昨天CF里面刚做了个简单DP，今天就知道有DP这个东西了。看题和写花了十几分钟。</p><p>F题是个比较神奇的题，属于那种数据范围比较小的连复杂度都想不好的题，不太会。</p><p><del>要是先开D题罚时可能会小一点。总感觉顺着做才是王道，感觉是因为水平不够不够自信才有此想法。</del></p><p>今天才发现ATC的计分机制是根据你最后一题的提交时间算的，所以只要会做，啥顺序都一样的。</p><p>等题解发了以后改F题。</p>]]></content>
     
