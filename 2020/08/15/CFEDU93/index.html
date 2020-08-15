@@ -89,6 +89,36 @@
 <!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
 
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+            });
+          </script>
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+                tex2jax: {
+                  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                }
+              });
+          </script>
+    
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Queue(function() {
+                  var all = MathJax.Hub.getAllJax(), i;
+                  for(i=0; i < all.length; i += 1) {
+                      all[i].SourceElement().parentNode.className += ' has-jax';
+                  }
+              });
+          </script>
+    
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
 
 
   
@@ -126,13 +156,70 @@
                   </a>
                 </span>
                 
+                <span class="span--tag">
+                  <a href="/tags/Contests/" title="查看 Contests 标签">
+                    <b>#</b> Contests
+                  </a>
+                </span>
+                
               </span>
           
       </div>
       <div class="markdown-body">
-        <p>Rating.png:</p>
+        <h1 id="EDU-93"><a href="#EDU-93" class="headerlink" title="EDU 93"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1398">EDU 93</a></h1><p>Rating.png:</p>
 <p><img src="/images/CFEDU93/rating.png" alt="CFRoundEDU93"></p>
 <p>正常发挥吧。毕竟就这水平。<br>AB没啥好说的，读题速度要是快点就好了。<br>C题不知道在想啥。想了一堆奇怪的东西（觉得区间是不交，是包含的，然后求每个数在的最小满足条件的区间就好了），然后发现这东西就是个错的（eg:03030）。莫名其妙花了好久，数组没清对还WA了一下。<br>D题做的挺慢的，想当然写个贪心然后WA。然后想了好久把才贪心叉掉。(eg: R:5 G:4 B:4,3)。就是两个较小的数相同的时候，选其中的一个是不对的。（R和G选了，B自己剩下两个没法配对）。然后改了个DP花了半个小时，虽然水的没办法，不过因为好久没写过DP了，勉强也能接受。<br>然后就只有半小时了，读了E和F。感觉比较麻烦，比赛时间是写不完了。但是应该都是可做题，这几天找个时间写一下。<br>发现最近学习效率都不太行，还是要高效一点。</p>
+<p>Day2：发现E题看错了，以为是有负数收益的法术。<del>草，有SB。</del></p>
+<p><img src="/images/CFEDU93/www.webp" width="200px"/> </p>
+<h1 id="E-Two-Types-of-Spells"><a href="#E-Two-Types-of-Spells" class="headerlink" title="E. Two Types of Spells"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1398/problem/E">E. Two Types of Spells</a></h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>有两种法术，火焰法术造成一定伤害，雷电法术造成一定伤害还会使得下次伤害翻倍。</p>
+<p>现在一个人啥也不会，每次学会一个法术或者忘掉之前的一个法术，问用现有的法术如何打出最大伤害（每个法术的收益大于0）。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>如果有$K$个雷电法术，那么翻倍的一定是目前会的伤害最大前$K$个。除非前$K$个全是雷电法术，那么放最前面的第一个雷电法术是不能翻倍的，这个时候还不如把一个最大的火焰法术放进去翻倍（也就是用最大的火焰法术换最小的雷电法术）。</p>
+<p>支持插入和删除，要求维护：</p>
+<ul>
+<li>雷电法术的个数（$K$)</li>
+<li>数组里面前$K$大的和</li>
+<li>非前$K$大的数的和</li>
+<li>第$K$大</li>
+<li>最大的火焰法术</li>
+</ul>
+<p>知道这些东西以后，就可以判断是否都是雷电法术。如果不是都是，答案就是前$K$大×2+后面的和；</p>
+<p>如果都是，答案就是前$K$大×2+后面的和-最小的雷电法术+最大的火焰法术。</p>
+<p><strong>平衡树</strong></p>
+<p>这些东西可以用数据结构去维护。平衡树维护子树和，树枝数组要离线和二分， 线段树维护子树大小和子树和然后二分。</p>
+<p>这个是直接的做法。</p>
+<p><strong>std::set</strong></p>
+<p>基于每次的$K$最多加/减$1$，其实也有用set的维护方法。</p>
+<p>分别用两个set表示前$K$大的数和剩下的数。</p>
+<ul>
+<li><p>如果要改变$K$的话，因为每次改一个，要么把第二个set的最大值丢到第一个set去，要么把第一个的丢到第二个里面去。</p>
+</li>
+<li><p>插入的时候，看插到哪个set里面去。</p>
+</li>
+<li><p>删除的时候，看是从哪个set里面删的。</p>
+</li>
+</ul>
+<p>顺便维护每个set中所有元素的和。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x; <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x); <span class="keyword">return</span> x;    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> A, B, C;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;F[<span class="number">2</span>];</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;Good, Bad;</span><br><span class="line">ll sumG, sumB;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Fix</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (Good.<span class="built_in">size</span>() &lt; F[<span class="number">1</span>].<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = *(--Bad.<span class="built_in">end</span>());</span><br><span class="line">        Bad.erase(--Bad.<span class="built_in">end</span>());</span><br><span class="line">        sumB -= x;</span><br><span class="line">        Good.insert(x);</span><br><span class="line">        sumG += x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (Good.<span class="built_in">size</span>() &gt; F[<span class="number">1</span>].<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = *Good.<span class="built_in">begin</span>();</span><br><span class="line">        Good.erase(Good.<span class="built_in">begin</span>());</span><br><span class="line">        sumG -= x;</span><br><span class="line">        Bad.insert(x);</span><br><span class="line">        sumB += x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (Good.<span class="built_in">size</span>() &amp;&amp; Bad.<span class="built_in">size</span>() &amp;&amp; *(Good.<span class="built_in">begin</span>()) &lt; *(--Bad.<span class="built_in">end</span>())) &#123;</span><br><span class="line">        <span class="keyword">int</span> t = *(Good.<span class="built_in">begin</span>());</span><br><span class="line">        <span class="keyword">int</span> p = *(--Bad.<span class="built_in">end</span>());</span><br><span class="line">        Good.erase(Good.<span class="built_in">begin</span>()); Good.insert(p);</span><br><span class="line">        sumG -= t; sumG += p;        </span><br><span class="line">        Bad.erase(--Bad.<span class="built_in">end</span>()); Bad.insert(t);</span><br><span class="line">        sumB -= p; sumB += t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> LOCAL</span></span><br><span class="line">        freopen(<span class="string">&quot;1.in&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    <span class="keyword">int</span> n = <span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">        <span class="keyword">int</span> opt = <span class="built_in">read</span>(), Di = <span class="built_in">read</span>();</span><br><span class="line">        <span class="keyword">if</span> (Di &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            F[opt].insert(Di);</span><br><span class="line">            Bad.insert(Di); sumB += Di;</span><br><span class="line">            Fix();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (Di &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            Di = -Di;</span><br><span class="line">            F[opt].erase(F[opt].<span class="built_in">find</span>(Di));    </span><br><span class="line">            <span class="keyword">if</span> (Good.count(Di)) Good.erase(Good.<span class="built_in">find</span>(Di)), sumG -= Di;</span><br><span class="line">            <span class="keyword">if</span> (Bad.count(Di)) Bad.erase(Bad.<span class="built_in">find</span>(Di)), sumB -= Di;</span><br><span class="line">            Fix();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// calculate answer</span></span><br><span class="line">        <span class="keyword">if</span> (!Good.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; sumB &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (!F[<span class="number">0</span>].<span class="built_in">size</span>() || *(--F[<span class="number">0</span>].<span class="built_in">end</span>()) &lt; *Good.<span class="built_in">begin</span>()) &#123; <span class="comment">// all lightning</span></span><br><span class="line">            <span class="keyword">int</span> t = *Good.<span class="built_in">begin</span>();</span><br><span class="line">            <span class="keyword">if</span> (Bad.<span class="built_in">size</span>()) &#123;</span><br><span class="line">                <span class="keyword">int</span> p = *(--Bad.<span class="built_in">end</span>());</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="number">2l</span>l * sumG - t + p + sumB &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="number">2l</span>l * sumG - t &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; sumG + sumG + sumB &lt;&lt; <span class="built_in">endl</span>;    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="F-Controversial-Rounds"><a href="#F-Controversial-Rounds" class="headerlink" title="F. Controversial Rounds"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1398/problem/F">F. Controversial Rounds</a></h1><h2 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h2><p>给出一个长为n的由01?三个东西构成的字符串。</p>
+<p>?可以变成0或者1。</p>
+<p>字符串中每有一个连续k个0或者k个1（长为k的连续段），答案就能加一，但是这些段都不能重合。</p>
+<p>（题目把是连赢k次（对应字符串的1），或者连输k次（对应字符串的0）叫做一轮，问最多能有多少轮）</p>
+<p>对于每个k从1到n，求最大答案。</p>
+<h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>比赛的时候感觉这题有点数学，想到了按照相同长度的去处理，复杂度nlogn，然后就不会做了= =</p>
+<p>实际上除了复杂度以外啥都没想对。</p>
+<p>这种题一起不好算，可以在之前的基础上考虑一个一个加，也就是按照顺序一个一个算，复杂度慢慢变小。</p>
+<script type="math/tex; mode=display">n/1+n/2+n/3+n/4...n/n\approx nlogn</script><p>显然答案的和是$nlogn$级别的。</p>
+<p>可以有一个$nlog^2n$的做法就是先计算二分$i$开始的最长的可能，然后排序，从大到小把每个位置加进一个<code>set</code>，每次计算的时候<code>lower_bound(i+size)</code>。</p>
+<p>这样做其实多算了不必要的信息。</p>
+<p>我们假设我们现在在$i$点，要求长度为$k$，暴力地比较了$[i,i+k-1],[i+1,i+k],[i+2,i+k+1]…$是不是有可能满足条件，一直找到了一个$j(j\geq i)$满足$[j,j+k-1]$符合条件。</p>
+<p>根据这题的特殊性质：</p>
+<p>那当我们算长度$k+1$的时候，之前算过的不满足条件的区间后面再加一个数字也不会满足条件。$[i,i+k],[i+1,i+k+1],[i+2,i+k+2]…$这些区间也不可能是答案</p>
+<p>（因为$[i,i+k-1]$在长为$k$的时候就不是全$1$或者全$0$，$k+1$的话更不是了）</p>
+<p>我们直接去看$[j,j+k]$。</p>
+<p>用<code>nextQ[i]</code>表示如果<code>i</code>不行，下一次应该从哪个位置开始。</p>
+<p>当长度为$k$算完后，<code>nexQ[i]</code>表示从i开始的最近的一个符合条件的区间的头。</p>
+<p>这样就是$O(nlogn)$了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x; <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x); <span class="keyword">return</span> x;    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">int</span> suma[maxn], sumb[maxn], nextQ[maxn];</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">itworks</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> <span class="built_in">size</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y = x + <span class="built_in">size</span> - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> suma[y] - suma[x - <span class="number">1</span>] == (y - x + <span class="number">1</span>) || suma[y] - suma[x - <span class="number">1</span>] == <span class="number">0</span></span><br><span class="line">    || sumb[y] - sumb[x - <span class="number">1</span>] == (y - x + <span class="number">1</span>) || sumb[y] - sumb[x - <span class="number">1</span>] == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_next</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> <span class="built_in">size</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x + <span class="built_in">size</span> - <span class="number">1</span> &gt; n) <span class="keyword">return</span> x; </span><br><span class="line">    <span class="keyword">if</span> (itworks(x, <span class="built_in">size</span>)) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">return</span> nextQ[x] = find_next(nextQ[x], <span class="built_in">size</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> LOCAL</span></span><br><span class="line">        freopen(<span class="string">&quot;1.in&quot;</span>, <span class="string">&quot;r&quot;</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) </span><br><span class="line">        suma[i] = suma[i - <span class="number">1</span>] + (s[i] == <span class="string">&#x27;1&#x27;</span> || s[i] == <span class="string">&#x27;?&#x27;</span>),</span><br><span class="line">        sumb[i] = sumb[i - <span class="number">1</span>] + (s[i] == <span class="string">&#x27;0&#x27;</span> || s[i] == <span class="string">&#x27;?&#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) nextQ[i] = i + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> <span class="built_in">size</span> = <span class="number">1</span>; <span class="built_in">size</span> &lt;= n; ++<span class="built_in">size</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">position</span> = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (<span class="built_in">position</span> + <span class="built_in">size</span> - <span class="number">1</span> &lt;= n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (itworks(<span class="built_in">position</span>, <span class="built_in">size</span>)) <span class="built_in">position</span> = <span class="built_in">position</span> + <span class="built_in">size</span>, ans++;</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">position</span> = find_next(<span class="built_in">position</span>, <span class="built_in">size</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       </div>
       
@@ -168,6 +255,12 @@
                       </a>
                     </span>
                     
+                    <span class="span--tag">
+                      <a href="/tags/Contests/" title="查看 Contests 标签">
+                        <b>#</b> Contests
+                      </a>
+                    </span>
+                    
                   </span>
               
           </div>
@@ -178,6 +271,18 @@
       
     </div>
     
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#EDU-93"><span class="toc-text">EDU 93</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#E-Two-Types-of-Spells"><span class="toc-text">E. Two Types of Spells</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E6%84%8F"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-text">题解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#F-Controversial-Rounds"><span class="toc-text">F. Controversial Rounds</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E6%84%8F-1"><span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3-1"><span class="toc-text">题解</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
 
     
       <div class="comments-container">
