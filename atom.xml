@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Edt</title>
   
-  
+  <subtitle>Blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
@@ -180,8 +180,8 @@
   
   <entry>
     <title>素数判定</title>
-    <link href="http://yoursite.com/2018/11/23/primetest/"/>
-    <id>http://yoursite.com/2018/11/23/primetest/</id>
+    <link href="http://yoursite.com/2018/11/23/PrimeTest/"/>
+    <id>http://yoursite.com/2018/11/23/PrimeTest/</id>
     <published>2018-11-22T16:00:00.000Z</published>
     <updated>2020-08-14T18:21:01.601Z</updated>
     
