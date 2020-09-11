@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-11T15:07:18.895Z</updated>
+  <updated>2020-09-11T15:39:43.829Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Quantum Mechanics</title>
+    <link href="http://yoursite.com/2020/09/11/QuantumMechanics/"/>
+    <id>http://yoursite.com/2020/09/11/QuantumMechanics/</id>
+    <published>2020-09-11T15:25:00.000Z</published>
+    <updated>2020-09-11T15:39:43.829Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Lecture-1-System-and-Experiments"><a href="#Lecture-1-System-and-Experiments" class="headerlink" title="Lecture 1 System and Experiments"></a>Lecture 1 System and Experiments</h1><h2 id="1-1-Quantum-Mechanics-Is-Different"><a href="#1-1-Quantum-Mechanics-Is-Different" class="headerlink" title="1.1 Quantum Mechanics Is Different"></a>1.1 Quantum Mechanics Is Different</h2><p>Quantum Mechanics deals with small objects that people sensory organs cannot visualize them. </p><p>Method to understand: using <strong>mathematical abstractions</strong>. </p><p>updating…</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Lecture-1-System-and-Experiments&quot;&gt;&lt;a href=&quot;#Lecture-1-System-and-Experiments&quot; class=&quot;headerlink&quot; title=&quot;Lecture 1 System and Experim
+      
+    
+    </summary>
+    
+    
+      <category term="Note" scheme="http://yoursite.com/categories/Note/"/>
+    
+    
+      <category term="Mathematics" scheme="http://yoursite.com/tags/Mathematics/"/>
+    
+      <category term="Physics" scheme="http://yoursite.com/tags/Physics/"/>
+    
+  </entry>
   
   <entry>
     <title>September</title>
