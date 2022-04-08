@@ -103,7 +103,7 @@
   <!-- 关于页 url形式：https://yoursite/about/ -->
     <div class="container about-index">
       <div class="markdown-body">
-        <blockquote>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><blockquote>
 <p>Student, live in Wuhan, China.</p>
 </blockquote>
 <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>02年，退役Oier。</p>
@@ -112,7 +112,12 @@
 <p>脾气很差，没有朋友。</p>
 <p>出于各种原因已经数不清搭建过多少个博客了，当然这个博客也不会是最后一个。</p>
 <p>搭建这个博客的目的，希望能单纯一点，写点自己喜欢的东西，是写给自己看的。</p>
-
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
       </div>
     </div>
   

@@ -163,7 +163,7 @@
           
       </div>
       <div class="markdown-body">
-        <h1 id="对称-非对称加密"><a href="#对称-非对称加密" class="headerlink" title="对称/非对称加密"></a>对称/非对称加密</h1><p>在1976年前，所有方法都是对称加密算法。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="对称-非对称加密"><a href="#对称-非对称加密" class="headerlink" title="对称/非对称加密"></a>对称/非对称加密</h1><p>在1976年前，所有方法都是对称加密算法。</p>
 <p>Alice想出一种可逆加密方法，把加密方法告诉Bob，Bob加密了消息把密码发给Alice，Alice根据加密方法解密。</p>
 <p>要是别人截获了消息和加密方法，或者根据密码推测出加密方法，那么就能获得密码信息。</p>
 <p>1976年，<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/迪菲-赫爾曼密鑰交換">Diffie–Hellman_key</a>提供了一种非堆成加密的思想。</p>
@@ -222,7 +222,12 @@ c^d\equiv n \pmod{N}</script><h2 id="安全性"><a href="#安全性" class="head
 <p><strong>时间攻击</strong></p>
 <p><a target="_blank" rel="noopener" href="http://crypto.stanford.edu/~dabo/papers/ssl-timing.pdf">Paper</a></p>
 <p>Even要是知道Alicze对特定密码的加密时间以及了解Alice的硬件设备，可能可以根据加密时取模的时间计算，因为1比0花的时间要多，可以推算出$d$。</p>
-
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
       </div>
       
         <div class="prev-or-next">

@@ -175,8 +175,8 @@
           
       </div>
       <div class="markdown-body">
-        <h1 id="664-Div2"><a href="#664-Div2" class="headerlink" title="664 Div2"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1395">664 Div2</a></h1><p>SB.jpg：</p>
-<p><img src="/images/CF664D2/rating.png" alt="CFRound664Div2"></p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="664-Div2"><a href="#664-Div2" class="headerlink" title="664 Div2"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1395">664 Div2</a></h1><p>SB.jpg：</p>
+<p><a href="/images/CF664D2/rating.png" title="CFRound664Div2" class="gallery-item"><img src="/images/CF664D2/rating.png" alt="CFRound664Div2"></a></p>
 <p>A题瞎写WA一次；B题瞎写FST on Test45，最后发现自己的算法假的离谱，一个5×5的矩阵就能叉掉（就算如此还混过了pretest）；D题瞎写，计数的时候要把所用东西加起来，ans的初始值写-1（写0就行了），而且在莫名其妙的位置还爆了个int（两个1e5乘起来了）。</p>
 <p>下次要注意细节了，不能再想当然。</p>
 <h1 id="B-Boboniu-Plays-Chess"><a href="#B-Boboniu-Plays-Chess" class="headerlink" title="B. Boboniu Plays Chess"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1395/problem/B">B. Boboniu Plays Chess</a></h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给出一个矩阵，有一个棋子（走法同国际象棋中的车），给出矩阵的大小和棋子的初始位置，输出把每个位置走一遍，要求输出路径。</p>
@@ -191,7 +191,7 @@
 <p>比说说给出3×3的矩阵，规定你起点是2 3，就不存在方案。</p>
 <p>你可能觉得是因为起点在最外面一圈所以不行（因为这题规定起点不会在矩阵的最外圈）。</p>
 <p>其实给出5×5的矩阵里面打叉这些位置作为起点都是不行的。</p>
-<p><img src="/images/CF664D2/b2.PNG" alt=""></p>
+<p><a href="/images/CF664D2/b2.PNG" class="gallery-item"><img src="/images/CF664D2/b2.PNG" alt=""></a></p>
 <p>事实上这属于一个哈密顿路径问题，是一个图论问题。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>（英文资料都啃不动，看的全是中文的）</p>
 <ul>
@@ -216,11 +216,16 @@ p(G-V_1)\leq |V_1|</script><p>其中$p(G-V_1)$表示图G删去V1后的联通分�
 <p>如果是半哈密顿图则有</p>
 <script type="math/tex; mode=display">
 p(G-V_1)\leq |V1| + 1</script><p>由于没学过太多的图论知识，这个东西好像不太好证明，但是可以考虑：如果是Hamiltonian/semi-Hamiltonian删除相邻的，剩下的联通数一点是最大的，但是不会大于|V1|。</p>
-<p><img src="/images/CF664D2/b3.PNG" alt=""></p>
+<p><a href="/images/CF664D2/b3.PNG" class="gallery-item"><img src="/images/CF664D2/b3.PNG" alt=""></a></p>
 <h2 id="回到这题"><a href="#回到这题" class="headerlink" title="回到这题"></a>回到这题</h2><p>知道这个以后，可以发现，在长宽都是奇数的矩阵里面，只要删除$(n\times m -1)/2 $个点，那么矩阵中剩下$(n\times m - 1)/2 + 1$个点，但是为了规定起点，所以要新建一个点，只要这个点链接了被删除的点中的一个，那么就又多了一个联通分支，也就是说比删除的点的个数多了$2$个，这个不符合半哈密顿图的必要条件。</p>
-<p><img src="/images/CF664D2/b.PNG" alt=""></p>
+<p><a href="/images/CF664D2/b.PNG" class="gallery-item"><img src="/images/CF664D2/b.PNG" alt=""></a></p>
 <p>正因如此，类似这种（1，2）（2，1），在行列都为奇数的矩阵中，以行列和为奇数的点作为起点，不存在哈密顿路径。</p>
-
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
       </div>
       
         <div class="prev-or-next">
