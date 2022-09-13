@@ -88,9 +88,9 @@
       <category term="Code" scheme="http://yoursite.com/categories/Code/"/>
     
     
-      <category term="Codeforces" scheme="http://yoursite.com/tags/Codeforces/"/>
-    
       <category term="Contests" scheme="http://yoursite.com/tags/Contests/"/>
+    
+      <category term="Codeforces" scheme="http://yoursite.com/tags/Codeforces/"/>
     
   </entry>
   
@@ -116,11 +116,11 @@
       <category term="Code" scheme="http://yoursite.com/categories/Code/"/>
     
     
+      <category term="Contests" scheme="http://yoursite.com/tags/Contests/"/>
+    
       <category term="Codeforces" scheme="http://yoursite.com/tags/Codeforces/"/>
     
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
-    
-      <category term="Contests" scheme="http://yoursite.com/tags/Contests/"/>
     
   </entry>
   
