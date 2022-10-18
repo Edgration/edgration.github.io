@@ -8,7 +8,7 @@
       <link href="/2022/10/18/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"/>
       <url>/2022/10/18/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p><a href="\source\images\image30.png" title="upload successful" class="gallery-item"><img src="\source\images\image30.png" alt="upload successful"></a><br><a href="" alt=" class="gallery-item"><img src="" alt=""></a><br><a href="" alt=" class="gallery-item"><img src="" alt=""></a></p></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script src="node_modules/lg-thumbnail/dist/lg-thumbnail.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p><a class="gallery-item"><img src=\source\images\image30.png border=0></a>&lt;/td&gt;</p><table><tr><td><a class="gallery-item"><img src=\source\images\image30.png border=0></a></td></tr></table></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
       
       
       
