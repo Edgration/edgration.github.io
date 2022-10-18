@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-09-04T06:28:42.142Z</updated>
+  <updated>2022-10-18T12:36:13.776Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图片测试</title>
+    <link href="http://yoursite.com/2022/10/18/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"/>
+    <id>http://yoursite.com/2022/10/18/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</id>
+    <published>2022-10-18T12:32:24.000Z</published>
+    <updated>2022-10-18T12:36:13.776Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p><a href="\source\images\image30.png" title="upload successful" class="gallery-item"><img src="\source\images\image30.png" alt="upload successful"></a><br><a href="" alt=" class="gallery-item"><img src="" alt=""></a><br><a href="" alt=" class="gallery-item"><img src="" alt=""></a></p></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script src="node_modules/lg-thumbnail/dist/lg-thumbnail.js"></script><script>if (typeof lightGallery !== 'undefined') {        var options = {            selector: '.gallery-item'        };        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);        }</script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css&quot; /&gt;&lt;div class=&quot;.article
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ABC267</title>
