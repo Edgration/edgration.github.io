@@ -5,9 +5,9 @@
   <subtitle>Blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://kouruka.com/"/>
   <updated>2022-11-03T07:45:14.253Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://kouruka.com/</id>
   
   <author>
     <name>edgration</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>奥多摩</title>
-    <link href="http://yoursite.com/2022/11/02/%E5%A5%A5%E5%A4%9A%E6%91%A9/"/>
-    <id>http://yoursite.com/2022/11/02/%E5%A5%A5%E5%A4%9A%E6%91%A9/</id>
+    <link href="https://kouruka.com/2022/11/02/%E5%A5%A5%E5%A4%9A%E6%91%A9/"/>
+    <id>https://kouruka.com/2022/11/02/%E5%A5%A5%E5%A4%9A%E6%91%A9/</id>
     <published>2022-11-02T11:02:52.000Z</published>
     <updated>2022-11-03T07:45:14.253Z</updated>
     
@@ -35,17 +35,17 @@
     </summary>
     
     
-      <category term="Travel" scheme="http://yoursite.com/categories/Travel/"/>
+      <category term="Travel" scheme="https://kouruka.com/categories/Travel/"/>
     
     
-      <category term="travel, photos, thinking" scheme="http://yoursite.com/tags/travel-photos-thinking/"/>
+      <category term="travel, photos, thinking" scheme="https://kouruka.com/tags/travel-photos-thinking/"/>
     
   </entry>
   
   <entry>
     <title>十月</title>
-    <link href="http://yoursite.com/2022/10/18/%E5%8D%81%E6%9C%88/"/>
-    <id>http://yoursite.com/2022/10/18/%E5%8D%81%E6%9C%88/</id>
+    <link href="https://kouruka.com/2022/10/18/%E5%8D%81%E6%9C%88/"/>
+    <id>https://kouruka.com/2022/10/18/%E5%8D%81%E6%9C%88/</id>
     <published>2022-10-18T13:18:55.000Z</published>
     <updated>2022-10-18T13:39:42.026Z</updated>
     
@@ -66,8 +66,8 @@
   
   <entry>
     <title>四月</title>
-    <link href="http://yoursite.com/2022/10/18/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"/>
-    <id>http://yoursite.com/2022/10/18/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</id>
+    <link href="https://kouruka.com/2022/10/18/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"/>
+    <id>https://kouruka.com/2022/10/18/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</id>
     <published>2022-10-18T12:32:24.000Z</published>
     <updated>2022-10-18T13:14:09.548Z</updated>
     
@@ -88,8 +88,8 @@
   
   <entry>
     <title>ABC267</title>
-    <link href="http://yoursite.com/2022/09/04/ABC277/"/>
-    <id>http://yoursite.com/2022/09/04/ABC277/</id>
+    <link href="https://kouruka.com/2022/09/04/ABC277/"/>
+    <id>https://kouruka.com/2022/09/04/ABC277/</id>
     <published>2022-09-04T06:03:38.000Z</published>
     <updated>2022-11-03T07:44:27.471Z</updated>
     
@@ -105,19 +105,19 @@
     </summary>
     
     
-      <category term="Code" scheme="http://yoursite.com/categories/Code/"/>
+      <category term="Code" scheme="https://kouruka.com/categories/Code/"/>
     
     
-      <category term="Atcoder" scheme="http://yoursite.com/tags/Atcoder/"/>
+      <category term="Atcoder" scheme="https://kouruka.com/tags/Atcoder/"/>
     
-      <category term="Contests" scheme="http://yoursite.com/tags/Contests/"/>
+      <category term="Contests" scheme="https://kouruka.com/tags/Contests/"/>
     
   </entry>
   
   <entry>
     <title>ABC176</title>
-    <link href="http://yoursite.com/2020/08/15/ABC176/"/>
-    <id>http://yoursite.com/2020/08/15/ABC176/</id>
+    <link href="https://kouruka.com/2020/08/15/ABC176/"/>
+    <id>https://kouruka.com/2020/08/15/ABC176/</id>
     <published>2020-08-15T12:50:10.000Z</published>
     <updated>2020-09-11T05:04:20.869Z</updated>
     
@@ -133,19 +133,19 @@
     </summary>
     
     
-      <category term="Code" scheme="http://yoursite.com/categories/Code/"/>
+      <category term="Code" scheme="https://kouruka.com/categories/Code/"/>
     
     
-      <category term="Atcoder" scheme="http://yoursite.com/tags/Atcoder/"/>
+      <category term="Atcoder" scheme="https://kouruka.com/tags/Atcoder/"/>
     
-      <category term="Contests" scheme="http://yoursite.com/tags/Contests/"/>
+      <category term="Contests" scheme="https://kouruka.com/tags/Contests/"/>
     
   </entry>
   
   <entry>
     <title>CFEDU93</title>
-    <link href="http://yoursite.com/2020/08/15/CFEDU93/"/>
-    <id>http://yoursite.com/2020/08/15/CFEDU93/</id>
+    <link href="https://kouruka.com/2020/08/15/CFEDU93/"/>
+    <id>https://kouruka.com/2020/08/15/CFEDU93/</id>
     <published>2020-08-14T17:46:55.000Z</published>
     <updated>2020-08-15T11:48:15.472Z</updated>
     
@@ -161,19 +161,19 @@
     </summary>
     
     
-      <category term="Code" scheme="http://yoursite.com/categories/Code/"/>
+      <category term="Code" scheme="https://kouruka.com/categories/Code/"/>
     
     
-      <category term="Codeforces" scheme="http://yoursite.com/tags/Codeforces/"/>
+      <category term="Contests" scheme="https://kouruka.com/tags/Contests/"/>
     
-      <category term="Contests" scheme="http://yoursite.com/tags/Contests/"/>
+      <category term="Codeforces" scheme="https://kouruka.com/tags/Codeforces/"/>
     
   </entry>
   
   <entry>
     <title>CF664D2</title>
-    <link href="http://yoursite.com/2020/08/14/CF664D2/"/>
-    <id>http://yoursite.com/2020/08/14/CF664D2/</id>
+    <link href="https://kouruka.com/2020/08/14/CF664D2/"/>
+    <id>https://kouruka.com/2020/08/14/CF664D2/</id>
     <published>2020-08-13T15:46:55.000Z</published>
     <updated>2020-08-15T08:27:53.990Z</updated>
     
@@ -189,21 +189,21 @@
     </summary>
     
     
-      <category term="Code" scheme="http://yoursite.com/categories/Code/"/>
+      <category term="Code" scheme="https://kouruka.com/categories/Code/"/>
     
     
-      <category term="Codeforces" scheme="http://yoursite.com/tags/Codeforces/"/>
+      <category term="Contests" scheme="https://kouruka.com/tags/Contests/"/>
     
-      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+      <category term="Codeforces" scheme="https://kouruka.com/tags/Codeforces/"/>
     
-      <category term="Contests" scheme="http://yoursite.com/tags/Contests/"/>
+      <category term="Algorithm" scheme="https://kouruka.com/tags/Algorithm/"/>
     
   </entry>
   
   <entry>
     <title>RSA算法</title>
-    <link href="http://yoursite.com/2020/08/02/RSA/"/>
-    <id>http://yoursite.com/2020/08/02/RSA/</id>
+    <link href="https://kouruka.com/2020/08/02/RSA/"/>
+    <id>https://kouruka.com/2020/08/02/RSA/</id>
     <published>2020-08-02T07:02:49.000Z</published>
     <updated>2020-08-04T14:56:37.752Z</updated>
     
@@ -219,17 +219,17 @@
     </summary>
     
     
-      <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
+      <category term="Algorithm" scheme="https://kouruka.com/categories/Algorithm/"/>
     
     
-      <category term="Math" scheme="http://yoursite.com/tags/Math/"/>
+      <category term="Math" scheme="https://kouruka.com/tags/Math/"/>
     
   </entry>
   
   <entry>
     <title>ATCF题集-1</title>
-    <link href="http://yoursite.com/2020/08/01/ATCF-1/"/>
-    <id>http://yoursite.com/2020/08/01/ATCF-1/</id>
+    <link href="https://kouruka.com/2020/08/01/ATCF-1/"/>
+    <id>https://kouruka.com/2020/08/01/ATCF-1/</id>
     <published>2020-08-01T07:14:29.000Z</published>
     <updated>2020-08-02T07:56:55.328Z</updated>
     
@@ -245,17 +245,17 @@
     </summary>
     
     
-      <category term="Code" scheme="http://yoursite.com/categories/Code/"/>
+      <category term="Code" scheme="https://kouruka.com/categories/Code/"/>
     
     
-      <category term="Atcoder" scheme="http://yoursite.com/tags/Atcoder/"/>
+      <category term="Atcoder" scheme="https://kouruka.com/tags/Atcoder/"/>
     
   </entry>
   
   <entry>
     <title>莫比乌斯反演</title>
-    <link href="http://yoursite.com/2018/12/01/Mobius_inversion/"/>
-    <id>http://yoursite.com/2018/12/01/Mobius_inversion/</id>
+    <link href="https://kouruka.com/2018/12/01/Mobius_inversion/"/>
+    <id>https://kouruka.com/2018/12/01/Mobius_inversion/</id>
     <published>2018-11-30T15:00:00.000Z</published>
     <updated>2020-08-14T18:10:04.123Z</updated>
     
@@ -276,8 +276,8 @@
   
   <entry>
     <title>Prime_Test</title>
-    <link href="http://yoursite.com/2018/11/24/PrimeTest_/"/>
-    <id>http://yoursite.com/2018/11/24/PrimeTest_/</id>
+    <link href="https://kouruka.com/2018/11/24/PrimeTest_/"/>
+    <id>https://kouruka.com/2018/11/24/PrimeTest_/</id>
     <published>2018-11-23T15:00:00.000Z</published>
     <updated>2022-09-13T09:48:02.856Z</updated>
     
