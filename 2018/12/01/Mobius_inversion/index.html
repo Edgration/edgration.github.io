@@ -5,7 +5,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Luke" />
+  <meta name="author" content="Luka" />
   <!-- Open Graph Description 简短摘要-->
   
   <!-- 用于搜索引擎的文章摘要 -->
@@ -19,7 +19,7 @@
       
       |
     
-     Luke&#39;s Blog
+     Luka&#39;s Blog
   </title>
 
   
@@ -73,7 +73,7 @@
     }
   </script>
 
-<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="Luke's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="Luka's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -87,7 +87,7 @@
         <img src="/images/website/avatar.png" alt="">
       
     </a>
-    <div class="nickname"><a href="/">Luke</a></div>
+    <div class="nickname"><a href="/">Luka</a></div>
   </div>
   <div class="navbar">
     <ul>
@@ -98,6 +98,10 @@
       
         <li class="nav-item" data-path="/archives/">
           <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">Categories</a>
         </li>
       
         <li class="nav-item" data-path="/tags/">
@@ -168,9 +172,20 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2023-01-27 23:35:44
+          2024-01-30 00:49:59
         </span>
         
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Before-2024/" title="Before-2024">
+                    <b>#</b> Before-2024
+                  </a>
+                </span>
+                
+              </span>
+          
       </div>
       <div class="markdown-body">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="Something-useful"><a href="#Something-useful" class="headerlink" title="Something useful"></a>Something useful</h1><ol start='' >
@@ -188,7 +203,17 @@ $$n=p_1^{q_1}p_2^{q_2}...p_k^{qk}\\\mu(n)=\begin{cases} 1 & (x=1) &\\ 0 & (\max_
 <p>一个有用的性质
 $$\sum_{d|n}\mu(d)=[n=1]$$
 证明：考虑$d|n$相当于在$n$的因子中选择若干个，然后把这些因子组成的数的$\mu$加起来，如果有一个数的次数大于$1$，$\mu = 0$对答案没有贡献，所以这个$\mu$值只与选择的质因子的个数的奇偶性有关，也就是说只考虑每个质因子是否选择。
-$$\text{if}~~~n =1~~~\mu(1)=1\\\text{else}~~~n=p_1^{q_1}p_2^{q_2}...p_k^{qk}\\\sum_{d|n}\mu(d)=\binom{k}{0}-\binom{k}{1}+\binom{k}{2}-\binom{k}{3}...+(-1)^k\binom{k}{k}\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}\\\because (1+x)^{k}=\sum_{i=0}^{k}\binom{k}{i}x^i\\\therefore x=-1\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}=(1+(-1))^k = 0\\$$
+$$\text{if}~~~n =1~~~\mu(1)=1$$
+$$\text{else}~~~n=p_1^{q_1}p_2^{q_2}...p_k^{qk}$$
+$$\sum_{d|n}\mu(d)=\binom{k}{0}-\binom{k}{1}+\binom{k}{2}-\binom{k}{3}...+(-1)^k\binom{k}{k}\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}
+$$
+
+$$
+\because (1+x)^{k}=\sum_{i=0}^{k}\binom{k}{i}x^i
+$$
+$$
+\therefore x=-1\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}=(1+(-1))^k = 0\\
+$$
 </p>
 
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">IL <span class="keyword">void</span> <span class="title">Sieve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; maxn; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!flag[i]) &#123;</span><br><span class="line">            prime[++prime[<span class="number">0</span>]] = i;</span><br><span class="line">            mu[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= prime[<span class="number">0</span>] &amp;&amp; i * prime[j] &lt; maxn; ++j) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = i * prime[j]; flag[v] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> mu[v] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -287,9 +312,20 @@ $$\begin{aligned}\because \sum_{d|n}\varphi(d)&=n\\\therefore \sum_{i=1}^{n}\sum
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2023-01-27 23:35:44
+              2024-01-30 00:49:59
             </span>
             
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Before-2024/" title="Before-2024">
+                        <b>#</b> Before-2024
+                      </a>
+                    </span>
+                    
+                  </span>
+              
           </div>
           <div class="post-foot-prev">
             
