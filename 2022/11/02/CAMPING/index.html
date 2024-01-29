@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en" color-mode="light">
 
   <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <meta name="edgration" content="edgrational@gmail.com" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Luke" />
+  <!-- Open Graph Description 简短摘要-->
+  
+  <!-- 用于搜索引擎的文章摘要 -->
   
   
-  <title>Camping in Okutama | Luke&#39;s Blog</title>
+  
+  <title>
+    
+      Camping in Okutama 
+      
+      
+      |
+    
+     Luke&#39;s Blog
+  </title>
 
   
     <link rel="apple-touch-icon" href="/images/website/favicon.png">
@@ -18,19 +31,21 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
   <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
   
-<link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/iconfont/iconfont.css">
-<link rel="stylesheet" href="/css/github-markdown.css">
-<link rel="stylesheet" href="/css/highlight.css">
-
 
   <!-- jquery3.3.1 -->
-  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
 
   <!-- fancybox -->
-  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
-  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
   
 <script src="/js/fancybox.js"></script>
 
@@ -47,17 +62,17 @@
     </script>
   
 
+
   
-<script src="/js/search.js"></script>
- 
-  <script type="text/javascript">      
-       var search_path = "search.xml";
-       if (search_path.length == 0) {
-        search_path = "search.xml";
-       }
-       var path = "/" + search_path;
-       searchFunc(path, 'local-search-input', 'local-search-result');
-</script>
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+
 <meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="Luke's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -66,7 +81,12 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
       <div class="header">
   <div class="avatar">
-    <a href="/"><img src="/images/website/avatar.png" alt=""></a>
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/website/avatar.png" alt="">
+      
+    </a>
     <div class="nickname"><a href="/">Luke</a></div>
   </div>
   <div class="navbar">
@@ -82,10 +102,6 @@
       
         <li class="nav-item" data-path="/tags/">
           <a href="/tags/">Tags</a>
-        </li>
-      
-        <li class="nav-item" data-path="/about/">
-          <a href="/about/">About</a>
         </li>
       
         <li class="nav-item" data-path="/friends/">
@@ -107,40 +123,72 @@
 
 
 
+  <!-- LaTex Display -->
 
   
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
   
   
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
   
+
   
+
   
-  
+
   
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
       <div class="post-title">Camping in Okutama</div>
       <div class="post-attach">
-        <span class="post-pubtime">2022-11-02</span>
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2024-01-29 23:34:48
+        </span>
         
               <span class="post-tags">
-                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
                 
-                <span class="span--tag">
-                  <a href="/tags/travel/" title="查看 travel 标签">
-                    <b>#</b> travel
+                <span class="span--tag mr-8">
+                  <a href="/tags/travel/" title="travel">
+                    #travel
                   </a>
                 </span>
                 
-                <span class="span--tag">
-                  <a href="/tags/photos/" title="查看 photos 标签">
-                    <b>#</b> photos
+                <span class="span--tag mr-8">
+                  <a href="/tags/photos/" title="photos">
+                    #photos
                   </a>
                 </span>
                 
-                <span class="span--tag">
-                  <a href="/tags/thinking/" title="查看 thinking 标签">
-                    <b>#</b> thinking
+                <span class="span--tag mr-8">
+                  <a href="/tags/thinking/" title="thinking">
+                    #thinking
                   </a>
                 </span>
                 
@@ -148,105 +196,48 @@
           
       </div>
       <div class="markdown-body">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><script>
-    (function(){
-    if (prompt('Password is required to continue reading.') !== 'this is a password by kouruka'){
-    alert('Check and try again, please.');
-    history.back();
-    }
-    })();
-</script>
-
-<blockquote>
-<p><strong>前言：</strong><br>本人初中以后基本就没写过作文，这是一篇小学生流水账。<br><strong>以下照片很多都不是我拍的，感谢兄弟们！！！</strong></p>
-</blockquote>
-<h2 id="奥多摩町"><a href="#奥多摩町" class="headerlink" title="奥多摩町"></a>奥多摩町</h2><p>虽然不是人生第一次露营，但来了日本以后还是第一次。</p>
-<p>到东京也有半年了，活动范围也只在横滨，千叶；不计之前旅游去过的，最远的去过的地方也只是箱根。奥多摩町也在东京都内，位于多摩地域北西部，比起横滨和千叶还是要远一些。</p>
-<p><a href="\source\images\image31.png" title="还挺远？" class="gallery-item"><img src="\source\images\image31.png" alt="还挺远？"></a></p>
-<h2 id="出发"><a href="#出发" class="headerlink" title="出发"></a>出发</h2><h4 id="青梅市"><a href="#青梅市" class="headerlink" title="青梅市"></a>青梅市</h4><p>从新宿出发，乘坐中央线快速一个小时到达青梅，再从青梅乘坐青梅线半个小时到达奥多摩町。<br>由于到达青梅后下一班车到达还有一些时间，在青梅站附近走了走。远离东京一个小时的车程，伴随着一丝寒冷，惬意悠闲的生活气息也扑面而来。</p>
-<p><a href="\source\icloud\IMG_6171.jpeg" title="青梅駅" class="gallery-item"><img src="\source\icloud\IMG_6171.jpeg" alt="青梅駅"></a><br><a href="\source\icloud\IMG_6183.jpeg" class="gallery-item"><img src="\source\icloud\IMG_6183.jpeg" alt=""></a></p>
-<h4 id="奥多摩町-1"><a href="#奥多摩町-1" class="headerlink" title="奥多摩町"></a>奥多摩町</h4><p>下午两点多从新宿出发，一行人到达奥多摩的时候是五点半左右，这个时候天已经黑了。</p>
-<p><a href="\source\icloud\IMG_6190.jpeg" title="到达" class="gallery-item"><img src="\source\icloud\IMG_6190.jpeg" alt="到达"></a></p>
-<p><a href="\source\icloud\IMG_6199.jpeg" title="露营地小木屋旁的烧烤点" class="gallery-item"><img src="\source\icloud\IMG_6199.jpeg" alt="露营地小木屋旁的烧烤点"></a></p>
-<p>从奥多摩町駅走五分钟左右，经过一座桥就到达了这次的露营地点。正八边形的亭子后面有工作台和水槽，在这里处理烧烤的食材。</p>
-<h2 id="烧烤"><a href="#烧烤" class="headerlink" title="烧烤"></a>烧烤</h2><p><a href="\source\icloud\IMG_0494.JPG" class="gallery-item"><img src="\source\icloud\IMG_0494.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0495.JPG" class="gallery-item"><img src="\source\icloud\IMG_0495.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0496.JPG" class="gallery-item"><img src="\source\icloud\IMG_0496.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0493.JPG" title="乾杯！！！！" class="gallery-item"><img src="\source\icloud\IMG_0493.JPG" alt="乾杯！！！！"></a></p>
-<h2 id="河边的篝火"><a href="#河边的篝火" class="headerlink" title="河边的篝火"></a>河边的篝火</h2><p><a href="\source\icloud\IMG_0509.JPG" class="gallery-item"><img src="\source\icloud\IMG_0509.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0506.JPG" class="gallery-item"><img src="\source\icloud\IMG_0506.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_6209.gif" class="gallery-item"><img src="\source\icloud\IMG_6209.gif" alt=""></a></p>
-<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><p>图源：<a target="_blank" rel="noopener" href="https://www.instagram.com/xiaohan_sa/">梅老板</a></p>
-<p><a href="\source\icloud\IMG_6230.JPG" class="gallery-item"><img src="\source\icloud\IMG_6230.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_6231.JPG" class="gallery-item"><img src="\source\icloud\IMG_6231.JPG" alt=""></a></p>
-<h2 id="火炉与小木屋"><a href="#火炉与小木屋" class="headerlink" title="火炉与小木屋"></a>火炉与小木屋</h2><p>因为防疫<del>（迷惑）</del>政策，一个小木屋只能住五个人，睡前十个人聚在一间小木屋玩了会游戏。</p>
-<p>下午的新宿20度，凌晨的奥多摩只有5度左右。晚上睡觉的时候深切感受到了没穿秋裤的痛苦。</p>
-<p><a href="\source\icloud\IMG_6232.JPG" class="gallery-item"><img src="\source\icloud\IMG_6232.JPG" alt=""></a></p>
-<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><p><a href="\source\icloud\IMG_0497.JPG" class="gallery-item"><img src="\source\icloud\IMG_0497.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0491.JPG" title="烤棉花糖" class="gallery-item"><img src="\source\icloud\IMG_0491.JPG" alt="烤棉花糖"></a></p>
-<h2 id="风景"><a href="#风景" class="headerlink" title="风景"></a>风景</h2><p><a href="\source\icloud\IMG_0499.JPG" class="gallery-item"><img src="\source\icloud\IMG_0499.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0500.JPG" class="gallery-item"><img src="\source\icloud\IMG_0500.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0501.JPG" class="gallery-item"><img src="\source\icloud\IMG_0501.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0502.JPG" class="gallery-item"><img src="\source\icloud\IMG_0502.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0510.JPG" class="gallery-item"><img src="\source\icloud\IMG_0510.JPG" alt=""></a></p>
-<p><a href="\source\icloud\IMG_0511.JPG" class="gallery-item"><img src="\source\icloud\IMG_0511.JPG" alt=""></a></p>
-<h2 id="回程"><a href="#回程" class="headerlink" title="回程"></a>回程</h2><p>开始是结束的开始。</p>
-<p>带着疲惫与不舍，匆忙赶上了回家的车。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>来日本已经半年了。</p>
-<p>一个人来到陌生的国家，说着陌生的语言，住在一个20平的公寓里。在快节奏的东京，独自面对着生活与学业的压力。决定人生走向的重要的考试不到两周，这次出门也意味着翘掉了关键的两节课。</p>
-<p>可是，在边串着羊肉串边聊着天的时候；吃着烧烤举着啤酒干杯的时候；坐在篝火边看着星空的时候；围在小木屋里玩着游戏大笑的时候；甚至是摘下口罩，深吸一口林子里的空气的时候，一直埋藏在心里的焦虑和不安感好像能一扫而空。</p>
-<p>从小到大一直接受着传统的中国式教育，文化课也好，竞赛也罢，在最好的学校进最好的班，用所有的精力拼尽全力去争第一。但是，人外有人，我并不认为我有这个天分与毅力，就算有，我也并不能为此感到快乐。所以，高二竞赛退役后，我受够了每天压迫的生活，我放弃了高考，放弃了憧憬的大学的优录政策，我想逃离这个没有终点的漩涡，我想在匆忙的生活中得到解脱，我决定来日本留学，我想去看看不一样的世界。</p>
-<p>当然，以上这些完全可以当成我给自己摆烂找的一个借口罢了，我想说的是，在学业与生活中，我更想找到一个适合自己的平衡点。</p>
-<p>比起东京都繁华但冰冷的夜景，我更喜欢奥多摩璀璨而温暖的星空。</p>
-<p>曾经的我，会在小红书或者空间里看到别人考的高分的时候焦虑，会在考试失败的时候怀疑和自卑，会后悔以前说错的话和做错的决定，会在无数个梦醒时分泪流满面。</p>
-<p>而现在，我想我在奥多摩找到了答案。</p>
-<p>最后的最后，就用和大家一起的合照作为这拙劣作文的一个句号吧。小河边的篝火升起的烟挡住了摄像头，却意外的营造出一种特别的氛围感。</p>
-<p>非常感谢带我来的兄弟们，也希望大家能带着这样的笑容开开心心每一天！</p>
-<p><a href="\source\icloud\IMG_6228.JPG" title="2022-10-29" class="gallery-item"><img src="\source\icloud\IMG_6228.JPG" alt="2022-10-29"></a></p>
-<div align="right">
-  2022-11-3 04:03<br>
-  一个安静的夜晚
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="a51c6e55a74f5cce04899fb5ce2e7cb95f50382ba4f5826a6e57710bf7ba4586">10d79030e8222445804370796b90fca14b3382df4730eb0fe3a9f1aa6acbfdf977f308135c251cf4014cb9472e5eb4c74c686d76752dbbe94ba3f69cf8b56fccce0b6d03e83f93189a71b67d05f4dbf5998aa14250aaae92d7d73fe1576aae6fc0dc5be97c1cd7f842a00eb517d928bebeea38f73a71631e0c9756db9ef51ad78292a034a552afb16d6ca029ed6cace89228ced87cd0e6a13a98908d894f04c667179904bf87e37609f8c26803bd9033bad811ac866b58e989d1be4756cd5eefd6d170081a90aa03d99aa4273eeaa049894439d5fd730dd2d619b53ef8d3954365df235514082c559af34bae7421c3d61aef959958cc9251dbfdb6cc5e7a2074a9ea80d5037970969256a156f3aec0693923be23c955f8d7d488d6f9f4383a820fd512ef09f727e45cd74d2aec5aee7a610797bfdbb4a07f89e3f39c6c47c2ae64a7a16b44af582fe2083e86cb914c4f9702235290f48e09a025ab01198ca1041f08f50f9a4a85dbc8a576079b93efa7016396bdd2911ae8d3a9671dbff928ad095e0403a23a5b82b32a8b0630d2f5d3cea88a95d0e41afd39d9106e394ee0fff6d86b85d1e85e56e73008dfbd4d18f267faeb268106e7b7bb1021c862dbad5b98dd3e5640c2cdd67cb1540c5067dbb05503e492037cb122c579d5422f78710a4ffd8cefc1c54c9eab0a583d279e7368aad16ecbf31fae8028f751f6591c6e506d7fde017f8fe6b1afb992f84f69de09b50b66d31f35bad699a41ce43bc5a223a5f4128def8efa2dc9c71deaf7598108d61d2f99e02ce632f88c6847276d1aa2e2afcd183d33c8929dcf6522f63e7d456889ac77c399183a0a6d76708850c53d6e7c226c7d3b39cff4d5a47307c04f066b99c1a2362a9425028543408aa1b6218af93cd82ea50358e602c0621a5f34f70194f67e49d2a82c8ea5dc074ad3c9ccb14b6a82a79ca59a526c7572a293149fd87425b9df6e301395d3d3fa2ec27a1d854051ae7474ca3b92b69b61d616c6b52d658765f69f2d94d88ff62d727adf414517de23db1f589b84d63b530021ef53f20cef2a90604bb78d06f107625253d96a416322d74065406b7c879efb78197f245deacf63e871363f24fa3598d3e305abe14aa04a612a0951fdbde40b7d8cb5ac0b054224d4bfeaf602ff149cf399a75e774073cec0d84a4c741fa96eb9e46b1eb53b937b410b3323b7e7d5f255956a8f538cdc2f1fdd68cae0569c6252a3b808535bbb2e3f16bcca2e6cf15c10c7a3e27aaf57e04c139bca5b78586983e636591985458090e18e1d97f4a964331df66c5013e7c0c06a0a88a5ae892d1aa35c016236760a3c3af2d4acade35bc3b1fedf469df71a7f3c8341c713264963c3b6c0e0e05dd33128b9c04617e098fe987405a9c1d3fa38f359fdea5eb516e1191bf1e10b5a34b90cff41eecdf86207a5fb21f19bc7a0bd66bb1650db3cf79a5f5a65571d46c711e5d9ee4f5e4205ab8fa450a0632952f573a0b73115c1d6014978158cee0a23b2d6ba8faffcdc21c9f9c999de966c0d528f05c8b64e0525ddabe04561af89cf8e0f0f0035765883a007cd0f499194ce84f2253f1bd7aae5d008f635901dc111cc9198dd46f29aeb60783ecb78eb92e718d4d09f2c60827b245416eb187a787bc5de7ccd7f189b377106c73573ea154ffab7d57b945d491eea4357a0dc511f47260019531d0a7a501782747204437169f86937861f4f9d48ae88805eea2bad9569236b6bcbc622f7ef64e487aa9522acee602bdccd6a2f4fc5aa5582cdccb727ad819fa3d9a01a8d4bf2a08264dfb507b8514276449ef03b7ccd9e2a9791709dc5b3fbfaed06bece8bb43712bd52ae02fb50726a6d54192fe30f7f15c263f53da84a4916d7c5129e0dd68bb091a193d07f799de05b30141fd4e8ecca6b33f8456d863fb331e9a6633171828f213788b4fb7ea4c3387ab799ccb901acb56a48ed76850f84a70f02ab818cd41e8f067b4385a4f280d6864efefbc87474fd9c70bce49f18cd03c5dbb54a2aa026768ac966b733061d661fc6cc4658715155663d1cd4949e444b8156aa70f3a9508b8b5031429ed6125a979d47aa6fc429775aaebbbb9cbafbd7e99374f38e45dd20b9d263c6c6c358440a6de6c86f55057ccdacf7b60c067e089ef2a3ca783fdd1465bd7c73a81522861fb5fd348298fb89f250d1b8613c8bc56b69dec1f2fef5dace50d54774e4875a58efaa5df76dd0d9a128ca8eb445082ff4665004c068a3e85415896f037b301da8fc2e3b191bd3a3f92124917062073943121fb0a20d76cc50b87bbc24b5a8e60352436d6c03a85c564cf5498ab4951fa3a754ccd41186a08bfd01589090e7709b4ed743ec77030e464c95e5698ed72c5ec9b2803ae646720f662c80a72290f8fb0ba66fec9f9cc085d73f221a1e44383b49085823d22a5b5a4a2ad50aafe4c4434a2d6c45361ae31c11a94e23814ac4e4a5e969b74a0a40937942c85f365f57b6a1409b48bb1b226c61866c32643fa9540d31499c8942680e83c2cf2ab7ec1345320a7962d9e8a91ca5a6a0539719c981e48848063bdb4a2dfa73cf12e98f67c5118dbc40bed9c4388f4b0d910bdde73f949467b49eb8de944d042b7843617e3fea425572a281740e350b9e01ee626037f4b338f8d7fc5497c057256121f06e2db91aaf5d03527aac5708167a52b438cca781a21afffadbdcc9196d5cb9ce7db597b7adeb006a082c1f29b74a8e4bf5fc6842679b95afdf753c974e3dd64351991291257585281ee7c221e40104537586f87130b2603a1778a2d66d22a01bcefbd76cc30a17e4b4f4d18bffb48ee5af433b69b41fb5a69b32c2e57a55d2cecdf8d82334b25996080fba96373ef90219f2ed7adaca3b4b7258165fefb5151b2120dbed717357e2491613055e94a3f5414962d3635fba2d2530e6d435a119234b2fb496a5214cd1fa7c3243248a9a0e5699c36a16229fb496ece697ee98bd7510cc1b0bc19502644aa770cd8d0efeeba9141c1a991abe96f3b7d62ed96b4e5559907f81a0c90c87d4d2a7d05a5e0ab7c0130edab7bc657c5629c9ae18958ee4a82a5c03d3b8f052d1fc106c8de0338f9a5d403f194b54b4bb80210e9f362f31bf073553efb60fb89c6594ad190eca9ca2a0bb60b44193b7d62ad04cbc3f1f97d3dac26bebea0ab8eb53ef77b8d111d39ab2ea9f74946ec9b5ff987877f39c155d89b1622cb6fff1b159673aa31edd9986974f9fe4c4dcc437bd54bc83722b757762f6416b40a2403dfafaf05bd9d2ca2ccad0005e82ce927ba6ff26d4073b7e2ede2e8f41fb4c3abaaddd45249fba4f8409acc233dcdc6d56ffeadf193b4a0c7ef1943571393f6766175443deae87e5feea686761aaf7d2b125b69329554d863b3976f753d6d78c9e5942825454d9174e14f93c698f6eb7adea20f1481ed0fae3595fcf05cae634963cbaac00d7e38d475b58790abb77798a3de7f640dabbc8e1bea1892d48a0f042dfd80f34cba5cf3964e62b5953cae9db0f3e8e8524baab4cb6ab5128d0217cda78343d4c8f30158641bcc18679f823824dfa416d65bc983abdc0d5422bf12c4bc7b7361ad8696c129e241f785f3a44d450cd6f3b1938f3fc3bfa4158f8f70927560f0b8b50b206e3e1e203130c2b791633a45d798c9ad0004bd2bd9f187d37e3af662fac46d37b25ed1f904e660d7f9125cd9a75170cd23076e81b5cb734f7e9fff365e375621d5144111a31c9048507a83965d010dcc0e1cbc28e66bc9d1289d1bf8a40c4f800bf1036d345ea8074e8d1a5e4027a0dcc3377ec6ad2f8de57dbe56b86d1dc6402ef6e42f3767242ccef2e2b14ff7927de7a7a93f6c2ed87f72697f6df1d8bb84495b616e470fccf41311f26f607ebbc7ff3628be957162f764191592cc9c05849604fac2cd988be13ec024a3a2420d04be5e385e3a357966ee95fcbbe95d9fbdadc88ad462574096f8fe54e347cb765f5072b217c25158e4f14e71be51759c1df46e441fe46db52afae763c456a696071c4a0d4f5af0850d4b8655a987622c53c9008c3b897407c96b8851d425bfa6c45c574110867f424b893d450c5cb3535df32bfef2fdad53613fc47e13465010af88fe075b3e9b911454e81dbdaf2849023e9e1bb76e5a779f67962d5ab017c702c28b041b39794a32a9c856b91a38b9eecf66dd0e02526cec6f08026984620d93dc262f8d9c8a1e34bcd30ca4d0ef460f80ad1e8febf2f6cce725079af0d153544cb76af34d52ca49bc881a9f1cdd9f079a506de42588630a57293a744130b3396a0009cbd712bc07fd6e76de88dc44a878344a968872d8f523b0425a77bd58f94289831e81b9e85a8cddcd6aee050602c9b9c3a7273548329227974a4e8b39d40f036f1a07786cdb0827a3466c4aef1916cbef1351c71476096c76d374c26d5ca2d25d885907c34b3b2d663c9a099d0a6d072dc021f86fc5949540a5392a82ad6cbf80b6d9eb515a4d93d590117551416b797b66aa7d8ba7742005bb4c68e75e6e7d24918db5c68f78d586dc150634aadad80fad42909a16039df2f1df451d04c7cf6b999f002fad19f01066f17304df88ad14eb74a0957610aa1381d925e1e7ad7ec31f426dff43bed4235b872aea17d710a6ab690619ef03ea9dbe217e70c60016581eff366af67d01d951290adc04bb282502b2c3deab4bd53ab9c65bc2406fb130717f274f6d13a0a195830c1cee06e2bac0a139c20e6b939a030b6155f156d2cfff48f442416affb6ae78e9f95a3ccbdc1c24216ce2e552ce60fc7ed737b10ba7c686d4e2a7ec2208e69fb98a2181892452b62c9b84a8e68030bb134ca36e5f3a27e24ec9b943965f54646fd50cf97c7de2095f4c325fa4611da2377bca4ec43b3819af0232882673ae6e27924372d7ef4d9b1b253b56351cc0fdb8a10683626576bc1996568b637473647bef37c4a5393a528977e9917aa33579904a0dd8251332740afe1af1b094ed148677cf6eb7648dffed144e6e462d50c9921c4dd3e695a1f23a9b4f9ea7c2cab0dbbc89c62e5473ae547164c990506256919012a62b36db7ac3fe7ff9a78db46d0e83260599397f2027ddca7fb5d29f1c6d6e96634785ab73eb41be5415c33963a470543ea60212173b21bd723adca00c0847415f0e06f811d977c7e6238e77023cafc39c185fae7b8f116bc9114fe1784a6a40bf185f0fb857b3e8e2510c3ac92d5bce61509c8279dc0c68eabd958d0f3e9b78b16c3309df667928d8b15d2eeaaf1821031b9d90d62f408e02cc41673519f1ddb3e0c121c154a1baa4e1f96d27cbe3eb2ae4155c4cabeb00478ff3ecfe8b643bc79fd2b2facb908c1827869d303b83a8bee0357c5667a993ecabb20d4197fec08168f0f67bf65c6d079549809c5762fe7f0299d459736eab1e3480e85bf6e2c9781e9ae2c18e21826e905fd831d09f07d56adc83fac163abd15c1c1b0485e20af068e5e2ed25bec24b08060772c2c9831602617791e8d0cf93e4fa670c4a328d3d00d668240dbaefa0500f714e8c4bbc0b48e77ebbe2d4c50fae580e288df46bf83610dbe124768400e9e37493f1c51b9885dd139c1d2126965b4a61d09ab36091eb58e8b0cf897bf668b00808e86c6316afaa694e9880025d7271e5cee8413027f736d45bea72eb4ff4130446f832ed1150132821b575448b7f826fcbf683bff9580a6000965c66a2f67db46d1dd0eaa6a40665cc51031319c300d0facb3d8fa51791d59ffb1416e5ce48c7af7d63b0f5297bebfff5f39ee25aed8f44b036b33cd57d262cc15a4d4d319c972a90285daaaad2f1539fe2be63e327c7b1f8931de2e6163bf2e2b931520ec9131ad14346da44addead3e39deaa1873890f8069cc99e337dd587634795d3facede08d3bec229022cc7400718a8f07d969fdd434b874f811678ca74d4619623c0ec482dc40b436aa67d026a3a7e8391668fe7eb4cf3822003786205f2d01e6ba40e13074075ee1cc58e060d0d4280cd5bbb1a9aaac616ca0bd3e74d6c05ca72940483000b0abf66846914184d7046e12cfd99f6b56bd66ab37ea7f4af47a85cb05a28a8bae9a3b2e307da7bdcc7509c2167cf8baf66c25f383a0d2af32491d07546238d5a8564821e7bb2bc4e7972dce1f6060733f65a000f8db25dd08fc894c47ada3d0610d6090baf5ef3ef0ee9a94d7ccc62f6ee2237e688dbdf5244400124728576d8e5bc91d292a9773dd0fd8d1e5b7a0ff7a7f09c254e2a37e2c5c16131cb8fa1a7a280d12fc53f02e8b570be5333a7028dd860b5845210094a6794662623b162be4b83a4b7770abda00eea74ea3b103f8e7c7a18045b618786008b1a9adbc045d1917b49baaeef9dcf690f33ce19abfd64114cb41743026611b7e61ea8e017ba9f9096403bfc507ce2e5798482d9c43565de4ad15c5044501ab8b6d1a787e78a0be28d2bf4330696fee04fd4d1f8a716702f96ede42579e53c1655a2622f5da41b7b0239aecd740d3d469e56b44ebbfd8765c6d944536b40f23874bfb7c45b300faae18ca2165428c6fe38f1cf5699821a4ce9e4f40d78a4fa962ee0ab04e84d2d7d687fce376d2e80efdf5b08303cc7ae7759d9d05cee5e7f34d5caf7d786564cf175f7e0852f48c34d46b619d163656764b1dfd94cda5af5f0df13d1456a661dd9612ff09d525273fca5262831c491e33dba2e1a68b5b3b4d85098095a8649c5f28fdc6eaa8aecfb81435349d36d5755689cc59f1f24fa51b04d3d141906bebc8bce26b78726a862ab835dea1182d57eaa283bdb2dc8094822fc6684e92cedfe5892f875b408cde04281f5da6f198a006b8f1c9aac27fcc747526c391deced7fac5b3ebd92afe16b30ed66759e836f693be62684aa7853d1816a0b93f02928ac8a0a764e43121bc5ede2470c2286e9d23463fdc5d10db37581882ca72f1c373ff3fb0bcd52307d7efa21da28492fef1cf95366daf156770cc4fb65be259a0220304e38e7c376e621a3b0cfc3487ea1a9a74e6972b598b8cc874a31a619e38a1f16b3e606a211432d259901e661d7c436ca099322a3d72f5bc52b3eaa23516b52bb19d5565d104d0878e0a1ad81fc63c93e56240f33a820f8abaec6d3b3f74a3d954de602bf35878239df6fb81760c2f5903a5e8e446d7c184a2ecd63e3108f23c682c783df87efa1cbae5ffe8a3af048d7537b05915a8ea9c3011a623d11cd6ee894229d188e08eca9ff96fbaee06973fc1a80793d2d768677f8d565a28790c0be63f8fabb6ac8d05aae440f90ef314351eb14bc863529a4cf9b133dd6437f45c383cecffa17102babddcba3d81be005cf68465dfe9aa4c20bb714c6e1e81134b99b05ce9a1352296dbb0b658cf33a0a1d01d66637e609b25eaeaf2cbdb371592e23a976b3cfc98e5bc6e7e2fd94a8487b9a38ad4b45b5390cdab0437e77397b69dedb30bbed4cc47622d1cf046daa2c5b1fc2435037e6733579e817b4976be11b4697f9ba9805f551b3b693bee5874dcdaa9898111acbd5f143bdc7649f02b997a8062b7cfad207c81327d1e040406f2bb5edfe9136e0851cd110a6cb82c132176a7aecfca29714eb84b7d564f82a62827aa82e626c82fd0a44fb37c991b4935a63f8fd90c3fb62c5c1fbf93628d6912587915cb9d04c1b7dcffb23b7276702a2e5c44681b55b2fdd3753558c41a3ef8fb9bae0c9baa907a40e926b52373e800c8d3fc6bef8e60a5a705669e1adf9e6bbfd9eca677aa01b91737425c9860fdf2bd1ffeded426e39692a1408bf5f9d5eb36a6023670acad555b1c22cc7b885860626d0bb87e298ea2c9bd8e12760170287f3e5df041b0676b33e0ab38da7bf007d5ead8e27ba731a107bec3b16a8a7fcf2706563f038961190ceeef13c79e87630fefd6a0d14bc914b6ff7d35a83cee1b8a24c514f60a286aa7b3c44dff73524a58e8fac2523c44cfbbd721b3174bb40289962fea13f5129a67da270f6f2c82be0ce4624c8973cae9c9659f35314b87376d85332ab0e0e75d3d82a3baecdc999ba9f14c56a3ce6e155d7676c2af4c5c296c0726573f4c76a8b5ad84191daa7518cdbda3d4227326ace5f42463d69e9158028689e16dd11816e519315391cc71d68927e7196ce7e57ea7066705fc17ca94826c8e5d02c4ebb981c097cdd6145803eec2775de56ec57245022b5552a40e7517329465e7cc061fe9ed025bb2a4a92d2890f8b3cd54ea40a722da84943fa8acf9db305bd11ff7109743f9fb4a56d6f52ced95ea579629d77e2934b7400b805697e7f789dab115a79d89cbe6be9accba769777788c961cccd06c1a0a07a1331751924a4807a40eb72f9bc30b8aa88108d902ef0a8f02b01394206e440e4493755bbf58ed0725e44641e25e865b7b66811dedb18ee18c50c670a5d9cadee0425d9903d281f45f13b5e67696818a2ecefe1d52130bc2c7abfb847a2e5a512426b22db740cd487c1cc1d90dd7b687f9ddbeb9f5aae021f654d80a4c82b8e55e9a7ef57ceea73d22b24686582161537d6529b8b3a043e61066b0c96cb2b568575e5a76d96430aa4d755db28ca28132b7d9c0474f4e5dd95287a50e772fe9f38c7c1da67cfa133b21388392043d97823a4e766b4e26679eb5adef570fc55ab1130be0dceeb83b2ef52a14efd119f7580c32de95283a19d7f63e1d383e785c9e0106e6fdb02a2779aaa9764a82b00016d5c61bce54bd69fdd9b3874264cd2091e8730f57cbdb9db4909a54146639149b24535691c05d049da181ead2235fe6abd937aa5a924476aa3ae6887006dd42d52586e944442eae09f91a22f13c965f7ec43c63b0f4e91462700ea1741443b37ec1b214d359a58883f28e35d32d3d1a2b36d3f6274d2e3f8e9b704ae094bbcb140dae1f2645b6413bfd54a7597670c538556bd6b61acc6f4f23edd7f0d799b664816d68325949b9e86d6d0941ca1437337f4483f35f6d365b69e609bb5c68e47ebb7a394e29b5a6610facc1ab98779fc3e48c611b84718c0608fa583cb933e2c06f16c67385c61d8e7193e3378f2c4581a045bfaa2130113b773ab22ca41f23a2a66a985ca28ccd3b4fe2c5042fbdd587c67d304166631ca9b639ad82b1d337156f3dbc4b83257e15dc7886ee60d22230e0f87048b3a10ad6e80e4fee6eefa71053d9819f20b3fd9107a27ba83c8a87e963ed3396f62e2e217277155a88c2f10ba7a1bebfb05dca6e8ac0b193ec82c749ca2bb7706b6f839d9e915e62726169e9698e79efaf01090794881f9437a60d606f4085bb9373b51104031b060e45e4be6db4b8c962c8de7f8b16623ee358dd3b2170e823e33b5f23bf6d5519fe2279e7c9e7d24deaa0e5b1af334a6c7eff87b904874013558e6538f3057f83fededb77c948da4bbac8ea14681be6b19a435a4fd2cfaeef9a6f64d726fb4add4d5f7d610c1421ce9da03fe1163f8b3fe55fb547b1ecc3572caf6824db88b5a42acf297ea95191637b3e74ad5e9646e1ba24cd896f23865b508e50f1794ba9d84d1209efa9d76f4ba63db909d3cc059591fce37505cd93d3f174c8964737a7aa0c1152a21e50efc305beca0c4b71efd2533e94ccb2f644ae3773ec9235842d8ce14e5ea49ddef8a76c8efcfe5333cd43e3417a660ec79b5926342fa22aa0879cfabe4575101c7f13d1ac2c2175d5cfe86be116bbcb369176059cc4ee547b71de529fc233e90ae17bfbbea51322fb5f35b0f57ea8a44448314d911ffe07a30b7808ffe7b4ac43394ed8047ec2f5e373798a58fa84e7c8faf58cdec8c789059f8abe5ca63f3f6e587d626755fff83ad3ccf2cdfac634e2c0c0dbf0de7d8d0750980486e1bc99aff2ff07fd96e3b6f8360b1e599932b1f0fda26207a33fe63e95bdab57d42f64e52ce3029524ccf116011f21c1b6235b74101c2dee6f5c4f9a953029d2d1f4813baa16c669e6e7b938d742ca6bf95bc928661a0ecb0bf5cf4a0a3524db0c9381aaaba59ed5e706cdc39bb8c0dfaccb7080b27e190b19d5c1dbf38339f58c82ff02f9eb6d1747dec68c3b82c78f6cd24c4cbae54d5cafdc9727a57513cc740d4a71b1f8746a742b9ffe58cc1911cb27b5a54ea64541c8350403150287a5fdd6ea9c3687a7131dd54f45b94af6ddf9080d75eb42bfc8504e009022b3ad8e3b725f80c5c639796f534f65b85fdc4f3db5a7fa7555daa59c74e6e87e8cbb4624a6f94f05f2b3712ac510dcb419222fffc24ae3861acd27dc396d1d103f850f9ecc124f72e25247f6b0a1cb634f623d0093457a6b923761ae964199c09910429e6e654d7f0585e03d40af8f219d4f9ea4a06797f0db0f6508947e98a998acb091a0d9ed123e4c3141288116e080df47f8a7d1a8975b897fa44529dbe2238146d9670ba9ef0ed71914194db22a4f06d1645ae089049d9a9ea30e662a997d0b117883d6db03e52f99ea5e32d0ff56d37b5474600149b2b909a7bd45168eb33039dadc290e4e2e36425800c74e3e5991ed835d157bb7df20b9456065d8fe9e9f22b2582e8a4ee07f3d9e2b30c90b7568654f1aeb8fa5703c72c2a925d07c4d45947d50cc13e8d5ba63af0a8103be82e5743e7fc85b6057f9376089a05e722a5fabd28491e0f1ba337fef3da620fb65e5f16375bdd2768bf6affb6d3b95184bbd49aefb04d88aacdad0f8c672ae194eed84b5467b6f1d699a97694ddf7747fb36b7a9ecb93df79553eeffa57cbb38d5e940c111240f34de94872c7798786d0e0a713b7bd34e89c8c442167870111f59281df9034e268f4dc1a13e609c6c869c64e92162589865c17e36d84926d03b747e8fab9b4b54368ac71312aad0cac8cc83dcc84633983a20e48d2bd200d5a3381a0f95aac8a3aef7d89b79f352dee785f89be61957b666e4e32929fce356efe8c0f9c587724ea340ecb00040a240fd9c255ecd76d4074dd6848a18f1dda1f41c25dfcbdc950166fbdcc2a06bdbf60f4b976ee5ac9448bd6f8d96ed33e632618bea7a55192311e5367cd416f61979af41c3066a4470c55bf251fa293459182023a7cee39abfe9e26b36b08ed9672f0e717c681fb9af72046fbbf4afee43eeeb7b98304a69acd159ba67730aab23e420c73a835f44318932a7a6244e4708e1cb6bacc8f7956be560ad57c165fc19c0303de29625e15ae46dd206ad6c2585f43df6935724a172599870c8debc9611dc87fb87242ab3c221c8218629b6ee0775b757eb62320cbbe6ec0617ac0206240ce31a007fc8e94df86b3c7d6ad38f14b9b86bff1829fb0dcf5475df03502b2f83e685619a1e895a3afbbfe3ac989e7a025db9a0f7b61e35801c0ebe0b83c8feed2af8567e5419ca971b0dc02187c7abb111bef78cfa669da47227e85783128683db9150dd378e600a9584b25f32a9575fff3a641631d65d963d7f5432ab664cc0826aca010ce24d384398c73d3b7acbcc36a11b2a1cea1276b0034d45657f63123210587d8510bd912fa04cdfb72f20fba7fe622db20e951129f06838c759b40535541ac9db039d1394411687a3dda4880d6d213b91b231fc5028d1f8d42102258b51d5f9c0c53b0bbd0ceac8b8bc539cc6e8370cdbae96bf27cef7ac35a3a2209bb4935c36c7d4627ac1dd47438a026ef9b49ff439831893b090589d14199a2c9b905cdfd4d839fe27601bf9556e17946ee9e9f0b51e372659dfcf006c121da1450c835cf4590e657e9bc2fe87d49571db279133f3fe2f1c198fc8ffcecacc7ee31b13978f7186690d7e7e18e26a60d8e4c32bd5cf4e8423a1136f6d80135d13054a32d88f0d19536e82fd3c04fdba3f44f1b61828430e4906769150f4f4a9a40a6f9f88637b06f8dd20dd749fd78f2cc62b0bdeed79cabb7bd8fac41b483cfd19235ff433c7f00de72b9be6fa46fbad32599777ee37823366b40ec06c5513e54f1844eccdda2a0091484e08945af8279302cd099cf1c5a1dcbe342de3183f1c0834d657c9a20424b054cba3309b177789d7120e73678af138be17c01e666cf5974a49f7dc710097e49ea5fa3260427d45adcbafad43f027223982e3b25d06d006d10d48b1e22f1bcfa5273a238dbdb2cfb86b12e03fb660a7b549543e2dec6079b30d6fc0bd4707cd1bc916a5d921535446f608d612d9962fe8da5f5b1a67d6ed1763f61bd96f70d21af3d0cc18be9d2bb4b8dbe3bcc48d2bd8e877d26cc9787211fe2c9ad779ba97d1f95c3441c1bfe8bd35c2d6ae835cc5dcc7e0e20f174a3a422f554eea9fa5093fffd27a7b18bc0412e50dc94b6d07bdee57e0290032be037111d08c71b195a4d288ef4680795c3bca18786eb839a6f5ff0ff575720d9f17a05846822664678ded51601586b34585c002a21388b75b7fdbfd44988c76a0c</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
 </div>
-
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>去了上智的校园祭，把后面的课全推掉了，这回是彻底摆烂了。（2022/11/4）</p>
-</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2022/10/18/22OCT/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>PREV</span>
-              </a>
-            
           </div>
           <div class="post-attach">
-            <span class="post-pubtime">2022-11-02</span>
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2024-01-29 23:34:48
+            </span>
             
                   <span class="post-tags">
-                    <i class="iconfont icon-tags" title="标签 | tags"></i>
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
                     
-                    <span class="span--tag">
-                      <a href="/tags/travel/" title="查看 travel 标签">
-                        <b>#</b> travel
+                    <span class="span--tag mr-8">
+                      <a href="/tags/travel/" title="travel">
+                        #travel
                       </a>
                     </span>
                     
-                    <span class="span--tag">
-                      <a href="/tags/photos/" title="查看 photos 标签">
-                        <b>#</b> photos
+                    <span class="span--tag mr-8">
+                      <a href="/tags/photos/" title="photos">
+                        #photos
                       </a>
                     </span>
                     
-                    <span class="span--tag">
-                      <a href="/tags/thinking/" title="查看 thinking 标签">
-                        <b>#</b> thinking
+                    <span class="span--tag mr-8">
+                      <a href="/tags/thinking/" title="thinking">
+                        #thinking
                       </a>
                     </span>
                     
@@ -255,20 +246,20 @@
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2022/12/04/22NOV/" target="_self">
-                <span>NEXT</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
-            
           </div>
         </div>
       
     </div>
     
-  <div class="post-catalog" id="catalog">
-    <div class="title">目录</div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%A5%E5%A4%9A%E6%91%A9%E7%94%BA"><span class="toc-text">奥多摩町</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%91"><span class="toc-text">出发</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%92%E6%A2%85%E5%B8%82"><span class="toc-text">青梅市</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%A5%E5%A4%9A%E6%91%A9%E7%94%BA-1"><span class="toc-text">奥多摩町</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%A7%E7%83%A4"><span class="toc-text">烧烤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B2%B3%E8%BE%B9%E7%9A%84%E7%AF%9D%E7%81%AB"><span class="toc-text">河边的篝火</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%9F%E7%A9%BA"><span class="toc-text">星空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%AB%E7%82%89%E4%B8%8E%E5%B0%8F%E6%9C%A8%E5%B1%8B"><span class="toc-text">火炉与小木屋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%A9"><span class="toc-text">第二天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%8E%E6%99%AF"><span class="toc-text">风景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E7%A8%8B"><span class="toc-text">回程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%A5%E5%A4%9A%E6%91%A9%E7%94%BA"><span class="toc-text">奥多摩町</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%91"><span class="toc-text">出发</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%92%E6%A2%85%E5%B8%82"><span class="toc-text">青梅市</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%A5%E5%A4%9A%E6%91%A9%E7%94%BA-1"><span class="toc-text">奥多摩町</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%A7%E7%83%A4"><span class="toc-text">烧烤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B2%B3%E8%BE%B9%E7%9A%84%E7%AF%9D%E7%81%AB"><span class="toc-text">河边的篝火</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%9F%E7%A9%BA"><span class="toc-text">星空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%AB%E7%82%89%E4%B8%8E%E5%B0%8F%E6%9C%A8%E5%B1%8B"><span class="toc-text">火炉与小木屋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%A9"><span class="toc-text">第二天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%8E%E6%99%AF"><span class="toc-text">风景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E7%A8%8B"><span class="toc-text">回程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-text">最后</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol>
+      
     </div>
   </div>
 
@@ -281,24 +272,25 @@
     
       <div class="comments-container">
         
+
+
   <div id="disqus_thread"></div>
   <script>
-
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
-  (function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = 'https://edgration.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://edgration.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
   </script>
   <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
@@ -311,51 +303,52 @@
     
   </div>
 
-  
-        <div class="footer">
+
+        
+<div class="footer">
   <div class="social">
     <ul>
       
         <li>
-          <a title="email" href="mailto:edgrational@gmail.com">
-            <i class="iconfont icon-envelope"></i>
-          </a>
+          
+            <a title="email" href="mailto:mailto:edgrational@gmail.com">
+              <i class="iconfont icon-envelope"></i>
+            </a>
+            
         </li>
-      
+        
         <li>
-          <a title="twitter" target="_blank" rel="noopener" href="https://twitter.com/kouruka_">
-            <i class="iconfont icon-twitter"></i>
-          </a>
+          
+              <a title="rss" href="/atom.xml">
+                <i class="iconfont icon-rss"></i>
+              </a>
+              
         </li>
-      
-        <li>
-          <a title="instagram" target="_blank" rel="noopener" href="https://www.instagram.com/kouruka_/">
-            <i class="iconfont icon-photo"></i>
-          </a>
-        </li>
-      
-        <li>
-          <a title="rss" href="/atom.xml">
-            <i class="iconfont icon-rss"></i>
-          </a>
-        </li>
-      
+        
     </ul>
   </div>
   
+    
     <div class="footer-more">
-      <a target="_blank" rel="noopener" href="https://www.instagram.com/kouruka_/">Luke 2018-2023</a>
+      
+        <a href="/">Copyright © 2024 Luke</a>
+        
     </div>
   
+    
     <div class="footer-more">
-      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges</a>
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges</a>
+        
     </div>
+  
   
 </div>
 
       </div>
 
-      <div class="back-to-top hidden">
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
   <a href="javascript: void(0)">
     <i class="iconfont icon-chevronup"></i>
   </a>
@@ -366,6 +359,239 @@
 
 
 
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Camping%20in%20Okutama + '&url=' + https%3A%2F%2Fkouruka.com%2F2022%2F11%2F02%2FCAMPING%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://kouruka.com/2022/11/02/CAMPING/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </body>
 </html>

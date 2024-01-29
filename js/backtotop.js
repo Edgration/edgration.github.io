@@ -2,7 +2,7 @@
 function isHidden() {
   let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
   if (scrollTop > 0) {
-     document.querySelector(".back-to-top").className = "back-to-top";
+    document.querySelector(".back-to-top").className = "back-to-top";
   } else {
     document.querySelector(".back-to-top").className = "back-to-top hidden";
   }
@@ -28,5 +28,6 @@ const backToTop = () => {
   }, delay);
 }
 
+isHidden()
 document.addEventListener("scroll", isHidden, false);
 document.querySelector(".back-to-top").addEventListener("click", backToTop, false);

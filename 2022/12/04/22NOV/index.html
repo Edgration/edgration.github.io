@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en" color-mode="light">
 
   <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <meta name="edgration" content="edgrational@gmail.com" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Luke" />
+  <!-- Open Graph Description 简短摘要-->
+  
+  <!-- 用于搜索引擎的文章摘要 -->
   
   
-  <title>Nov. 22 | Luke&#39;s Blog</title>
+  
+  <title>
+    
+      Nov. 22 
+      
+      
+      |
+    
+     Luke&#39;s Blog
+  </title><meta name="robots" content="noindex">
 
   
     <link rel="apple-touch-icon" href="/images/website/favicon.png">
@@ -18,19 +31,21 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
   <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
   
-<link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/iconfont/iconfont.css">
-<link rel="stylesheet" href="/css/github-markdown.css">
-<link rel="stylesheet" href="/css/highlight.css">
-
 
   <!-- jquery3.3.1 -->
-  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
 
   <!-- fancybox -->
-  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
-  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
   
 <script src="/js/fancybox.js"></script>
 
@@ -47,17 +62,17 @@
     </script>
   
 
+
   
-<script src="/js/search.js"></script>
- 
-  <script type="text/javascript">      
-       var search_path = "search.xml";
-       if (search_path.length == 0) {
-        search_path = "search.xml";
-       }
-       var path = "/" + search_path;
-       searchFunc(path, 'local-search-input', 'local-search-result');
-</script>
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+
 <meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="Luke's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -66,7 +81,12 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="app">
       <div class="header">
   <div class="avatar">
-    <a href="/"><img src="/images/website/avatar.png" alt=""></a>
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/website/avatar.png" alt="">
+      
+    </a>
     <div class="nickname"><a href="/">Luke</a></div>
   </div>
   <div class="navbar">
@@ -82,10 +102,6 @@
       
         <li class="nav-item" data-path="/tags/">
           <a href="/tags/">Tags</a>
-        </li>
-      
-        <li class="nav-item" data-path="/about/">
-          <a href="/about/">About</a>
         </li>
       
         <li class="nav-item" data-path="/friends/">
@@ -107,28 +123,60 @@
 
 
 
+  <!-- LaTex Display -->
 
   
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
   
   
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
   
+
   
+
   
-  
+
   
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
       <div class="post-title">Nov. 22</div>
       <div class="post-attach">
-        <span class="post-pubtime">2022-12-04</span>
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2024-01-29 23:33:16
+        </span>
         
               <span class="post-tags">
-                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
                 
-                <span class="span--tag">
-                  <a href="/tags/encrypted/" title="查看 encrypted 标签">
-                    <b>#</b> encrypted
+                <span class="span--tag mr-8">
+                  <a href="/tags/encrypted/" title="encrypted">
+                    #encrypted
                   </a>
                 </span>
                 
@@ -139,15 +187,6 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><blockquote>
 <p>越是上了年纪才越能体会到博客的意义<br>记录一下过去的十一月</p>
 </blockquote>
-<script>
-    (function(){
-    if (prompt('Password is required to continue reading.') !== 'this is a password by kouruka'){
-    alert('Check and try again, please.');
-    history.back();
-    }
-    })();
-</script>
-
 <h1 id="ソフィア祭"><a href="#ソフィア祭" class="headerlink" title="ソフィア祭"></a>ソフィア祭</h1><p>十一月三日是日本文化节，全国放一天假，刚好有机会去上智的校园祭。</p>
 <p>所谓校园祭，有点类似国内的校庆，但也不太一样，各种社团在分配的教师里面摆摊，校园内大舞台还有各种节目表演。</p>
 <h2 id="前夜祭"><a href="#前夜祭" class="headerlink" title="前夜祭"></a>前夜祭</h2><p>活动是从11月1号到4号四天时间，1号晚上就去看了前夜祭，有走秀和乐队的LIVE。<del>看完以后的感想是要减肥。</del></p>
@@ -196,7 +235,7 @@
 <p>就连”听到这个名字买就完了”的马丁D28都试了。</p>
 <p>回去的路上路过另一家琴行，都走过了。路上想着反正来了一次试试也行，就折回去看了一下。这次没有中国人的店员，接待我的是一个看起来比我还年轻的日本店员。关于乐器的专有名词我都不太会说，不过说了半天还是说懂了。</p>
 <p>店员只给我找了两把符合我预期的琴，试了一下，突然就感觉对了。一般流程都是可以跟店员说让他保留，然后多比较几个琴行。</p>
-<p>我直接在店员惊讶的眼神中当场买下来了。</p>
+<p>然后买了。</p>
 <p><a href="\source\icloud\IMG_6933.JPEG" class="gallery-item"><img src="\source\icloud\IMG_6933.JPEG" alt=""></a></p>
 <p>是一把中古的雅马哈全单，生产于1981年的日本。声音在岁月的沉淀中变的非常好听，琴身上也带留有很多磕碰修补的痕迹，能看出上一任主人很喜欢这把琴也非常爱惜。每次弹琴的时候都会不由自主地想起这把吉他经历过的故事，仿佛能听到过去传来的歌声。</p>
 <h1 id="日常"><a href="#日常" class="headerlink" title="日常"></a>日常</h1><h2 id="宠物店"><a href="#宠物店" class="headerlink" title="宠物店"></a>宠物店</h2><p>超级大乌龟，我最开始还以为是电动玩具</p>
@@ -231,27 +270,25 @@
             selector: '.gallery-item'
         };
         lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+        }</script><!-- flag of hidden posts -->
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2022/11/02/CAMPING/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>PREV</span>
-              </a>
-            
           </div>
           <div class="post-attach">
-            <span class="post-pubtime">2022-12-04</span>
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2024-01-29 23:33:16
+            </span>
             
                   <span class="post-tags">
-                    <i class="iconfont icon-tags" title="标签 | tags"></i>
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
                     
-                    <span class="span--tag">
-                      <a href="/tags/encrypted/" title="查看 encrypted 标签">
-                        <b>#</b> encrypted
+                    <span class="span--tag mr-8">
+                      <a href="/tags/encrypted/" title="encrypted">
+                        #encrypted
                       </a>
                     </span>
                     
@@ -265,10 +302,15 @@
       
     </div>
     
-  <div class="post-catalog" id="catalog">
-    <div class="title">目录</div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%82%BD%E3%83%95%E3%82%A3%E3%82%A2%E7%A5%AD"><span class="toc-text">ソフィア祭</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%A4%9C%E7%A5%AD"><span class="toc-text">前夜祭</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E7%A5%AD"><span class="toc-text">本祭</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A9%E7%A8%B2%E7%94%B0%E7%A5%AD"><span class="toc-text">早稲田祭</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AD%E5%A4%AE%E5%A4%A7%E5%AD%A6"><span class="toc-text">中央大学</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%9D%E9%BE%84%E7%90%83%E4%B8%8EKTV"><span class="toc-text">保龄球与KTV</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B5%E5%BD%B1"><span class="toc-text">电影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%B3%E8%9A%A4%E5%B8%82%E5%9C%BA"><span class="toc-text">跳蚤市场</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%A1%E5%A4%96%E5%AD%A6%E4%B9%A0"><span class="toc-text">校外学习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%89%E4%BB%96"><span class="toc-text">吉他</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8"><span class="toc-text">日常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A0%E7%89%A9%E5%BA%97"><span class="toc-text">宠物店</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%88%E5%85%A8%E9%A3%9F%E5%8A%A0%E7%BA%A2%E6%9C%88"><span class="toc-text">月全食加红月</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%83%E7%9A%84"><span class="toc-text">吃的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%A3%8E%E6%99%AF"><span class="toc-text">一些风景</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E5%B0%BE"><span class="toc-text">结尾</span></a></li></ol>
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%82%BD%E3%83%95%E3%82%A3%E3%82%A2%E7%A5%AD"><span class="toc-text">ソフィア祭</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%A4%9C%E7%A5%AD"><span class="toc-text">前夜祭</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E7%A5%AD"><span class="toc-text">本祭</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A9%E7%A8%B2%E7%94%B0%E7%A5%AD"><span class="toc-text">早稲田祭</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AD%E5%A4%AE%E5%A4%A7%E5%AD%A6"><span class="toc-text">中央大学</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%9D%E9%BE%84%E7%90%83%E4%B8%8EKTV"><span class="toc-text">保龄球与KTV</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%B5%E5%BD%B1"><span class="toc-text">电影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%B3%E8%9A%A4%E5%B8%82%E5%9C%BA"><span class="toc-text">跳蚤市场</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%A1%E5%A4%96%E5%AD%A6%E4%B9%A0"><span class="toc-text">校外学习</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%89%E4%BB%96"><span class="toc-text">吉他</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8"><span class="toc-text">日常</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A0%E7%89%A9%E5%BA%97"><span class="toc-text">宠物店</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%88%E5%85%A8%E9%A3%9F%E5%8A%A0%E7%BA%A2%E6%9C%88"><span class="toc-text">月全食加红月</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%83%E7%9A%84"><span class="toc-text">吃的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%A3%8E%E6%99%AF"><span class="toc-text">一些风景</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E5%B0%BE"><span class="toc-text">结尾</span></a></li></ol>
+      
     </div>
   </div>
 
@@ -281,24 +323,25 @@
     
       <div class="comments-container">
         
+
+
   <div id="disqus_thread"></div>
   <script>
-
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
-  (function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = 'https://edgration.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://edgration.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
   </script>
   <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
@@ -311,51 +354,52 @@
     
   </div>
 
-  
-        <div class="footer">
+
+        
+<div class="footer">
   <div class="social">
     <ul>
       
         <li>
-          <a title="email" href="mailto:edgrational@gmail.com">
-            <i class="iconfont icon-envelope"></i>
-          </a>
+          
+            <a title="email" href="mailto:mailto:edgrational@gmail.com">
+              <i class="iconfont icon-envelope"></i>
+            </a>
+            
         </li>
-      
+        
         <li>
-          <a title="twitter" target="_blank" rel="noopener" href="https://twitter.com/kouruka_">
-            <i class="iconfont icon-twitter"></i>
-          </a>
+          
+              <a title="rss" href="/atom.xml">
+                <i class="iconfont icon-rss"></i>
+              </a>
+              
         </li>
-      
-        <li>
-          <a title="instagram" target="_blank" rel="noopener" href="https://www.instagram.com/kouruka_/">
-            <i class="iconfont icon-photo"></i>
-          </a>
-        </li>
-      
-        <li>
-          <a title="rss" href="/atom.xml">
-            <i class="iconfont icon-rss"></i>
-          </a>
-        </li>
-      
+        
     </ul>
   </div>
   
+    
     <div class="footer-more">
-      <a target="_blank" rel="noopener" href="https://www.instagram.com/kouruka_/">Luke 2018-2023</a>
+      
+        <a href="/">Copyright © 2024 Luke</a>
+        
     </div>
   
+    
     <div class="footer-more">
-      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges</a>
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges</a>
+        
     </div>
+  
   
 </div>
 
       </div>
 
-      <div class="back-to-top hidden">
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
   <a href="javascript: void(0)">
     <i class="iconfont icon-chevronup"></i>
   </a>
@@ -366,6 +410,239 @@
 
 
 
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Nov.%2022 + '&url=' + https%3A%2F%2Fkouruka.com%2F2022%2F12%2F04%2F22NOV%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://kouruka.com/2022/12/04/22NOV/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
     </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   </body>
 </html>
