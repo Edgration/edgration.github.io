@@ -170,7 +170,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2024-02-01 22:26:51
+          2024-02-01 23:51:25
         </span>
         
               <span class="post-categories">
@@ -229,7 +229,18 @@ y=x+C</script><p>其中<script type="math/tex">C</script>是积分常数（積�
 </li>
 </ul>
 <p>为了方便描述，<script type="math/tex">y'=\frac{dy}{dx}~~or~~\frac{dy}{dt}</script></p>
-<h1 id="一階微分方程式"><a href="#一階微分方程式" class="headerlink" title="一階微分方程式"></a>一階微分方程式</h1><h2 id="変数分離法"><a href="#変数分離法" class="headerlink" title="変数分離法"></a>変数分離法</h2><p>对于方程</p>
+<h1 id="一階微分方程式"><a href="#一階微分方程式" class="headerlink" title="一階微分方程式"></a>一階微分方程式</h1><h2 id="前進オイラー法"><a href="#前進オイラー法" class="headerlink" title="前進オイラー法"></a>前進オイラー法</h2><p>假设你不会解这个微分方程，只想知道函数<script type="math/tex">y(x)</script>在某个点近似的值，可以使用欧拉法近似。</p>
+<p>对于每个点<script type="math/tex">(x,y)</script>来说，把<script type="math/tex">(x,y)</script>带入微分方程式中，可以计算出<script type="math/tex">dy/dx</script>的数值，这个值其实就是函数<script type="math/tex">y</script>在点<script type="math/tex">(x,y)</script>的斜率。</p>
+<p><a target="_blank" rel="noopener" href="http://www.den.t.u-tokyo.ac.jp/ad_prog/assets/img/ode/diff_eq2.gif" title="图片来源网络" class="gallery-item"><img src="http://www.den.t.u-tokyo.ac.jp/ad_prog/assets/img/ode/diff_eq2.gif" alt="图片来源网络"></a></p>
+<p>那么可以从设定一个长度<script type="math/tex">h</script>，从初始点<script type="math/tex">(x_0,y(x_0))</script>开始，计算出横坐标<script type="math/tex">x_0+h</script>所对应的<script type="math/tex">y</script>的值；如此往复，直到计算出目标值<script type="math/tex">y(x)</script>。</p>
+<script type="math/tex; mode=display">
+y(x_0+h)=y(x_0)+h\times \frac{dy}{dx} |_{x=x_0,y=y_0}</script><p>显然，$h$的值越小，需要的计算次数越多，得到的结果越精确。</p>
+<p><strong>例</strong>：对于微分方程式</p>
+<script type="math/tex; mode=display">
+\frac{dy}{dx}=-\frac{y}{x}+3x</script><p>初期条件<script type="math/tex">y(1)=2</script>，令<script type="math/tex">h=0.1</script>，计算<script type="math/tex">y(1.3)</script>的值。</p>
+<p>解：可以画出下图的表格，方便计算。</p>
+<p><a target="_blank" rel="noopener" href="https://i0.imgs.ovh/2024/02/01/KN1SJ.jpeg" class="gallery-item"><img src="https://i0.imgs.ovh/2024/02/01/KN1SJ.jpeg" alt=""></a></p>
+<h2 id="変数分離法"><a href="#変数分離法" class="headerlink" title="変数分離法"></a>変数分離法</h2><p>对于方程</p>
 <script type="math/tex; mode=display">
 \frac{dy}{dx}=f(x)g(y)\\</script><p>我们可以把y和x有关的项<strong>分离</strong>，放到等号的两边，然后积分。</p>
 <p>假设<script type="math/tex">F(x)'=f(x)</script></p>
@@ -240,16 +251,19 @@ y=x+C</script><p>其中<script type="math/tex">C</script>是积分常数（積�
 \ln(g(y))&=F(x)+C\\
 g(y)&=e^{F(x)}+e^C\\
 g(y)&=C'e^{F(x)} ~~~~(C'=e^C)
-\end{align}</script><p>例如</p>
+\end{align}</script><p><strong>例</strong>：</p>
 <script type="math/tex; mode=display">
 \begin{align}
 \frac{dy}{dx}+3y&=0\\
+\end{align}</script><p>解：</p>
+<script type="math/tex; mode=display">
+\begin{align}
 \frac{dy}{dx}&=-3y\\
 \frac{1}{y}{dy}&=-3dx\\
 \ln(y)&=-3x+C\\
 y&=C'e^{-3x}
 \end{align}</script><h2 id="同次形"><a href="#同次形" class="headerlink" title="同次形"></a>同次形</h2><p>如果<script type="math/tex">x</script>和<script type="math/tex">y</script>的<strong>次数一致</strong>，可以用<script type="math/tex">u</script>替换<script type="math/tex">\frac{y}{x}</script>，把方程化简以后可以使用変数分離法求解。</p>
-<p>例如</p>
+<p><strong>例</strong>：</p>
 <script type="math/tex; mode=display">
 \begin{align}
 (xy+y^2+x^2)dx-x^2dy&=0\\
@@ -285,7 +299,11 @@ uy'+uP(x)y&=uQ(x)\\
 \int (uy)'dx&=\int uQ(x)dx\\
 uy&=\int uQ(x)dx+C\\
 y&=u^{-1}\int uQ(x)dx+C\\
-\end{align}</script><p>例如，在上面变数分离法的例子上用积分因子法，也能得到同样的结果</p>
+\end{align}</script><p><strong>例</strong>，在变数分离法的例题上用积分因子法，也能得到同样的结果</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac{dy}{dx}+3y&=0\\
+\end{align}</script><p>解：</p>
 <script type="math/tex; mode=display">
 \begin{align}
 \frac{dy}{dx}+3y&=0\\
@@ -293,10 +311,11 @@ e^3\frac{dy}{dx}+3e^3y&=0\\
 (e^3y)'&=0\\
 e^3y&=C\\
 y&=Ce^{-3x}
-\end{align}</script><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+\end{align}</script><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
 <li>真貝寿明. (2010). <em>徹底攻略 常微分方程式</em>. </li>
-<li>予備校のノリで学ぶ「大学の数学・物理」.<em>【大学数学】微分方程式入門</em> [Vedio]. Youtube. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=po97dnBfoco">https://www.youtube.com/watch?v=po97dnBfoco</a></li>
-<li>NHCLDX. <em>第七章——微分方程</em>. <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/99271908">https://zhuanlan.zhihu.com/p/99271908</a>   </li>
+<li>微分方程式の数値解法. 東京大学工学部 精密工学科 プログラミング応用 I・ II. <a target="_blank" rel="noopener" href="http://www.den.t.u-tokyo.ac.jp/ad_prog/ode/">http://www.den.t.u-tokyo.ac.jp/ad_prog/ode/</a></li>
+<li>予備校のノリで学ぶ「大学の数学・物理」. (2020).<em>【大学数学】微分方程式入門</em> [Vedio]. Youtube. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=po97dnBfoco">https://www.youtube.com/watch?v=po97dnBfoco</a></li>
+<li>NHCLDX. (2019). <em>第七章——微分方程</em>. <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/99271908">https://zhuanlan.zhihu.com/p/99271908</a>   </li>
 </ul>
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
@@ -318,7 +337,7 @@ y&=Ce^{-3x}
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2024-02-01 22:26:51
+              2024-02-01 23:51:25
             </span>
             
                   <span class="post-categories">
@@ -376,7 +395,7 @@ y&=Ce^{-3x}
     <div class="title">Contents</div>
     <div class="catalog-content">
       
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F%EF%BC%9F"><span class="toc-text">什么是微分方程式？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E9%9A%8E%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F"><span class="toc-text">一階微分方程式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%89%E6%95%B0%E5%88%86%E9%9B%A2%E6%B3%95"><span class="toc-text">変数分離法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AC%A1%E5%BD%A2"><span class="toc-text">同次形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%8D%E5%88%86%E5%9B%A0%E5%AD%90%E6%B3%95"><span class="toc-text">積分因子法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F%EF%BC%9F"><span class="toc-text">什么是微分方程式？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E9%9A%8E%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F"><span class="toc-text">一階微分方程式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E9%80%B2%E3%82%AA%E3%82%A4%E3%83%A9%E3%83%BC%E6%B3%95"><span class="toc-text">前進オイラー法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%89%E6%95%B0%E5%88%86%E9%9B%A2%E6%B3%95"><span class="toc-text">変数分離法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AC%A1%E5%BD%A2"><span class="toc-text">同次形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%8D%E5%88%86%E5%9B%A0%E5%AD%90%E6%B3%95"><span class="toc-text">積分因子法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol>
       
     </div>
   </div>
