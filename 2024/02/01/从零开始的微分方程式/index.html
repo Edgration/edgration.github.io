@@ -14,7 +14,7 @@
   
   <title>
     
-      Tag 
+      从零开始的微分方程式 
       
       
       |
@@ -155,21 +155,250 @@
 
 
 
-  <!-- 标签页 url形式：https://yoursite/tags/ -->
-  <div class="container tag-index">
-    <div>
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Atcoder/" rel="tag">Atcoder</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Codeforces/" rel="tag">Codeforces</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Contests/" rel="tag">Contests</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6/" rel="tag">大学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F/" rel="tag">微分方程式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li></ul>
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">从零开始的微分方程式</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2024-02-01 20:42:13
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="Categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Math/" title="Math">
+                    <b>#</b> Math
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/Math/" title="Math">
+                    #Math
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F/" title="微分方程式">
+                    #微分方程式
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学">
+                    #数学
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%A4%A7%E5%AD%A6/" title="大学">
+                    #大学
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h2 id="什么是微分方程式？"><a href="#什么是微分方程式？" class="headerlink" title="什么是微分方程式？"></a>什么是微分方程式？</h2><p>与一元一次方程可以解出来变量的具体值不同，微分方程式是关于函数的方程，解出来的是一个函数。例如微分方程</p>
+<script type="math/tex; mode=display">
+\frac{dy}{dx}=1</script><script type="math/tex; mode=display">
+y=x+C</script><p>其中<script type="math/tex">C</script>是积分常数（積分定数）。如果有一个初期条件是<script type="math/tex">y(0)=1</script>，即可解得<script type="math/tex">C=1,y=x+1</script>。</p>
+<p>这篇文章里会从零介绍<strong>一階微分方程式</strong>、<strong>二階微分方程式</strong>、<strong>偏微分方程式</strong>的解法，只需要掌握基础求导和积分的知识。</p>
+<ul>
+<li><p><em>一/二階微分方程式</em>：方程中最高是求一次或者二次导（微分），例如<script type="math/tex">x''+x'+1=3</script>就是一个二階微分方程式。</p>
+</li>
+<li><p><em>常微分方程式</em>：方程中只有一个变量，例如变量只有<script type="math/tex">x</script>的方程式。</p>
+</li>
+<li><p><em>偏微分方程式</em>: 方程中有两个以上的变量，例如包含<script type="math/tex">x</script>和<script type="math/tex">y</script>的方程组。</p>
+</li>
+</ul>
+<p>为了方便描述，<script type="math/tex">y'=\frac{dy}{dx}~~or~~\frac{dy}{dt}</script></p>
+<h2 id="一階微分方程式"><a href="#一階微分方程式" class="headerlink" title="一階微分方程式"></a>一階微分方程式</h2><h3 id="変数分離法"><a href="#変数分離法" class="headerlink" title="変数分離法"></a>変数分離法</h3><p>对于方程</p>
+<script type="math/tex; mode=display">
+\frac{dy}{dx}=f(x)g(y)\\</script><p>我们可以把y和x有关的项分离，放到等号的两边，然后积分。</p>
+<p>假设<script type="math/tex">F(x)'=f(x)</script></p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac{1}{g(y)}{dy}&=f(x)dx\\
+\int \frac{1}{g(y)}{dy}&=\int f(x)dx\\
+\ln(g(y))&=F(x)+C\\
+g(y)&=e^{F(x)}+e^C\\
+g(y)&=C'e^{F(x)} ~~~~(C'=e^C)
+\end{align}</script><p>例如</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac{dy}{dx}+3y&=0\\
+\frac{dy}{dx}&=-3y\\
+\frac{1}{y}{dy}&=-3dx\\
+\ln(y)&=-3x+C\\
+y&=C'e^{-3x}
+\end{align}</script><h3 id="同次形"><a href="#同次形" class="headerlink" title="同次形"></a>同次形</h3><p>如果<script type="math/tex">x</script>和<script type="math/tex">y</script>的次数一致，可以用<script type="math/tex">u</script>替换<script type="math/tex">\frac{y}{x}</script>，把方程化简以后可以使用変数分離法求解。</p>
+<p>例如</p>
+<script type="math/tex; mode=display">
+\begin{align}
+(xy+y^2+x^2)dx-x^2dy&=0\\
+x^2dy&=(xy+y^2+x^2)dx\\
+\frac{dy}{dx}&=(\frac{y}{x}+\frac{y^2}{x^2}+1)\\
+\end{align}</script><p>这里引入一个新变量<script type="math/tex">u</script></p>
+<script type="math/tex; mode=display">
+\begin{align}
+let~~u&=\frac{y}{x}\\
+\because y&=ux\\
+\therefore y'&=u'x+u
+\end{align}</script><p>带入方程中</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac{du}{dx}x+u&=u+u^2+1\\
+\frac{du}{dx}x&=u^2+1\\
+\frac{du}{dx}&=\frac{u^2+1}{x}\\
+\frac{du}{u^2+1}&=\frac{dx}{x}\\
+\tan^{-1}(u)&=\ln(x)+C\\
+u&=\tan(ln(x)+C)\\
+y&=ux= \tan(ln(x)+C)x
+\end{align}</script><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li>真貝寿明. (2010). <em>徹底攻略 常微分方程式</em>. </li>
+<li>予備校のノリで学ぶ「大学の数学・物理」.<em>【大学数学】微分方程式入門</em> [Vedio]. Youtube. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=po97dnBfoco">https://www.youtube.com/watch?v=po97dnBfoco</a></li>
+<li>NHCLDX. <em>第七章——微分方程</em>. <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/99271908">https://zhuanlan.zhihu.com/p/99271908</a>   </li>
+</ul>
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/09/04/ABC267/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2024-02-01 20:42:13
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="Categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Math/" title="Math">
+                        <b>#</b> Math
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/Math/" title="Math">
+                        #Math
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F/" title="微分方程式">
+                        #微分方程式
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E6%95%B0%E5%AD%A6/" title="数学">
+                        #数学
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%A4%A7%E5%AD%A6/" title="大学">
+                        #大学
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F%EF%BC%9F"><span class="toc-text">什么是微分方程式？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%9A%8E%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F"><span class="toc-text">一階微分方程式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%89%E6%95%B0%E5%88%86%E9%9B%A2%E6%B3%95"><span class="toc-text">変数分離法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AC%A1%E5%BD%A2"><span class="toc-text">同次形</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol>
+      
     </div>
   </div>
-  
 
   
+<script src="/js/catalog.js"></script>
 
-  
 
-  
 
-  
+
+    
+      <div class="comments-container">
+        
+
+
+  <div id="disqus_thread"></div>
+  <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://edgration.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
 
         
 <div class="footer">
@@ -454,12 +683,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + tags + '&url=' + https%3A%2F%2Fkouruka.com%2Ftags%2Findex.html + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F + '&url=' + https%3A%2F%2Fkouruka.com%2F2024%2F02%2F01%2F%25E4%25BB%258E%25E9%259B%25B6%25E5%25BC%2580%25E5%25A7%258B%25E7%259A%2584%25E5%25BE%25AE%25E5%2588%2586%25E6%2596%25B9%25E7%25A8%258B%25E5%25BC%258F%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://kouruka.com/tags/index.html" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=https://kouruka.com/2024/02/01/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BC%8F/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
