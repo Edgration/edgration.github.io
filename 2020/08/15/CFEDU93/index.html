@@ -95,19 +95,23 @@
     <ul>
       
         <li class="nav-item" data-path="/">
-          <a href="/">Home</a>
+          <a href="/">主页</a>
         </li>
       
         <li class="nav-item" data-path="/archives/">
-          <a href="/archives/">Archives</a>
+          <a href="/archives/">归档</a>
         </li>
       
         <li class="nav-item" data-path="/categories/">
-          <a href="/categories/">Categories</a>
+          <a href="/categories/">分类</a>
         </li>
       
         <li class="nav-item" data-path="/tags/">
-          <a href="/tags/">Tags</a>
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
         </li>
       
     </ul>
@@ -170,7 +174,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2024-01-30 00:50:29
+          2024-02-05 20:54:55
         </span>
         
               <span class="post-categories">
@@ -210,25 +214,25 @@
 <p><a href="/images/CFEDU93/www.webp" class="gallery-item"><img src="/images/CFEDU93/www.webp" width="200px"/></a> </p>
 <h1 id="E-Two-Types-of-Spells"><a href="#E-Two-Types-of-Spells" class="headerlink" title="E. Two Types of Spells"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1398/problem/E">E. Two Types of Spells</a></h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>有两种法术，火焰法术造成一定伤害，雷电法术造成一定伤害还会使得下次伤害翻倍。</p>
 <p>现在一个人啥也不会，每次学会一个法术或者忘掉之前的一个法术，问用现有的法术如何打出最大伤害（每个法术的收益大于0）。</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>如果有$K$个雷电法术，那么翻倍的一定是目前会的伤害最大前$K$个。除非前$K$个全是雷电法术，那么放最前面的第一个雷电法术是不能翻倍的，这个时候还不如把一个最大的火焰法术放进去翻倍（也就是用最大的火焰法术换最小的雷电法术）。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>如果有<script type="math/tex">K</script>个雷电法术，那么翻倍的一定是目前会的伤害最大前<script type="math/tex">K</script>个。除非前<script type="math/tex">K</script>个全是雷电法术，那么放最前面的第一个雷电法术是不能翻倍的，这个时候还不如把一个最大的火焰法术放进去翻倍（也就是用最大的火焰法术换最小的雷电法术）。</p>
 <p>支持插入和删除，要求维护：</p>
 <ul>
-<li>雷电法术的个数（$K$)</li>
-<li>数组里面前$K$大的和</li>
-<li>非前$K$大的数的和</li>
-<li>第$K$大</li>
+<li>雷电法术的个数（<script type="math/tex">K</script>)</li>
+<li>数组里面前<script type="math/tex">K</script>大的和</li>
+<li>非前<script type="math/tex">K</script>大的数的和</li>
+<li>第<script type="math/tex">K</script>大</li>
 <li>最大的火焰法术</li>
 </ul>
-<p>知道这些东西以后，就可以判断是否都是雷电法术。如果不是都是，答案就是前$K$大×2+后面的和；</p>
-<p>如果都是，答案就是前$K$大×2+后面的和-最小的雷电法术+最大的火焰法术。</p>
+<p>知道这些东西以后，就可以判断是否都是雷电法术。如果不是都是，答案就是前<script type="math/tex">K</script>大×2+后面的和；</p>
+<p>如果都是，答案就是前<script type="math/tex">K</script>大×2+后面的和-最小的雷电法术+最大的火焰法术。</p>
 <p><strong>平衡树</strong></p>
 <p>这些东西可以用数据结构去维护。平衡树维护子树和，树枝数组要离线和二分， 线段树维护子树大小和子树和然后二分。</p>
 <p>这个是直接的做法。</p>
 <p><strong>std::set</strong></p>
-<p>基于每次的$K$最多加/减$1$，其实也有用set的维护方法。</p>
-<p>分别用两个set表示前$K$大的数和剩下的数。</p>
+<p>基于每次的<script type="math/tex">K</script>最多加/减<script type="math/tex">1</script>，其实也有用set的维护方法。</p>
+<p>分别用两个set表示前<script type="math/tex">K</script>大的数和剩下的数。</p>
 <ul>
-<li><p>如果要改变$K$的话，因为每次改一个，要么把第二个set的最大值丢到第一个set去，要么把第一个的丢到第二个里面去。</p>
+<li><p>如果要改变<script type="math/tex">K</script>的话，因为每次改一个，要么把第二个set的最大值丢到第一个set去，要么把第一个的丢到第二个里面去。</p>
 </li>
 <li><p>插入的时候，看插到哪个set里面去。</p>
 </li>
@@ -245,17 +249,17 @@
 <h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>比赛的时候感觉这题有点数学，想到了按照相同长度的去处理，复杂度nlogn，然后就不会做了= =</p>
 <p>实际上除了复杂度以外啥都没想对。</p>
 <p>这种题一起不好算，可以在之前的基础上考虑一个一个加，也就是按照顺序一个一个算，复杂度慢慢变小。</p>
-<script type="math/tex; mode=display">n/1+n/2+n/3+n/4...n/n\approx nlogn</script><p>显然答案的和是$nlogn$级别的。</p>
-<p>可以有一个$nlog^2n$的做法就是先计算二分$i$开始的最长的可能，然后排序，从大到小把每个位置加进一个<code>set</code>，每次计算的时候<code>lower_bound(i+size)</code>。</p>
+<script type="math/tex; mode=display">n/1+n/2+n/3+n/4...n/n\approx nlogn</script><p>显然答案的和是<script type="math/tex">nlogn</script>级别的。</p>
+<p>可以有一个<script type="math/tex">nlog^2n</script>的做法就是先计算二分<script type="math/tex">i</script>开始的最长的可能，然后排序，从大到小把每个位置加进一个<code>set</code>，每次计算的时候<code>lower_bound(i+size)</code>。</p>
 <p>这样做其实多算了不必要的信息。</p>
-<p>我们假设我们现在在$i$点，要求长度为$k$，暴力地比较了$[i,i+k-1],[i+1,i+k],[i+2,i+k+1]…$是不是有可能满足条件，一直找到了一个$j(j\geq i)$满足$[j,j+k-1]$符合条件。</p>
+<p>我们假设我们现在在<script type="math/tex">i</script>点，要求长度为<script type="math/tex">k</script>，暴力地比较了<script type="math/tex">[i,i+k-1],[i+1,i+k],[i+2,i+k+1]...</script>是不是有可能满足条件，一直找到了一个<script type="math/tex">j(j\geq i)</script>满足<script type="math/tex">[j,j+k-1]</script>符合条件。</p>
 <p>根据这题的特殊性质：</p>
-<p>那当我们算长度$k+1$的时候，之前算过的不满足条件的区间后面再加一个数字也不会满足条件。$[i,i+k],[i+1,i+k+1],[i+2,i+k+2]…$这些区间也不可能是答案</p>
-<p>（因为$[i,i+k-1]$在长为$k$的时候就不是全$1$或者全$0$，$k+1$的话更不是了）</p>
-<p>我们直接去看$[j,j+k]$。</p>
+<p>那当我们算长度<script type="math/tex">k+1</script>的时候，之前算过的不满足条件的区间后面再加一个数字也不会满足条件。<script type="math/tex">[i,i+k],[i+1,i+k+1],[i+2,i+k+2]...</script>这些区间也不可能是答案</p>
+<p>（因为<script type="math/tex">[i,i+k-1]</script>在长为<script type="math/tex">k</script>的时候就不是全<script type="math/tex">1</script>或者全<script type="math/tex">0</script>，<script type="math/tex">k+1</script>的话更不是了）</p>
+<p>我们直接去看<script type="math/tex">[j,j+k]</script>。</p>
 <p>用<code>nextQ[i]</code>表示如果<code>i</code>不行，下一次应该从哪个位置开始。</p>
-<p>当长度为$k$算完后，<code>nexQ[i]</code>表示从i开始的最近的一个符合条件的区间的头。</p>
-<p>这样就是$O(nlogn)$了。</p>
+<p>当长度为<script type="math/tex">k</script>算完后，<code>nexQ[i]</code>表示从i开始的最近的一个符合条件的区间的头。</p>
+<p>这样就是<script type="math/tex">O(nlogn)</script>了。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x; <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x); <span class="keyword">return</span> x;    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">int</span> suma[maxn], sumb[maxn], nextQ[maxn];</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">itworks</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> size)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y = x + size - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> suma[y] - suma[x - <span class="number">1</span>] == (y - x + <span class="number">1</span>) || suma[y] - suma[x - <span class="number">1</span>] == <span class="number">0</span></span><br><span class="line">    || sumb[y] - sumb[x - <span class="number">1</span>] == (y - x + <span class="number">1</span>) || sumb[y] - sumb[x - <span class="number">1</span>] == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_next</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> size)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x + size - <span class="number">1</span> &gt; n) <span class="keyword">return</span> x; </span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">itworks</span>(x, size)) <span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">return</span> nextQ[x] = <span class="built_in">find_next</span>(nextQ[x], size);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> LOCAL</span></span><br><span class="line">        <span class="built_in">freopen</span>(<span class="string">&quot;1.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) </span><br><span class="line">        suma[i] = suma[i - <span class="number">1</span>] + (s[i] == <span class="string">&#x27;1&#x27;</span> || s[i] == <span class="string">&#x27;?&#x27;</span>),</span><br><span class="line">        sumb[i] = sumb[i - <span class="number">1</span>] + (s[i] == <span class="string">&#x27;0&#x27;</span> || s[i] == <span class="string">&#x27;?&#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) nextQ[i] = i + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> size = <span class="number">1</span>; size &lt;= n; ++size) &#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> position = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (position + size - <span class="number">1</span> &lt;= n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">itworks</span>(position, size)) position = position + size, ans++;</span><br><span class="line">            <span class="keyword">else</span> position = <span class="built_in">find_next</span>(position, size);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
@@ -277,7 +281,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2024-01-30 00:50:29
+              2024-02-05 20:54:55
             </span>
             
                   <span class="post-categories">

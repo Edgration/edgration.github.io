@@ -95,19 +95,23 @@
     <ul>
       
         <li class="nav-item" data-path="/">
-          <a href="/">Home</a>
+          <a href="/">主页</a>
         </li>
       
         <li class="nav-item" data-path="/archives/">
-          <a href="/archives/">Archives</a>
+          <a href="/archives/">归档</a>
         </li>
       
         <li class="nav-item" data-path="/categories/">
-          <a href="/categories/">Categories</a>
+          <a href="/categories/">分类</a>
         </li>
       
         <li class="nav-item" data-path="/tags/">
-          <a href="/tags/">Tags</a>
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
         </li>
       
     </ul>
@@ -170,7 +174,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2024-01-30 00:49:59
+          2024-02-05 20:49:28
         </span>
         
               <span class="post-categories">
@@ -186,110 +190,62 @@
           
       </div>
       <div class="markdown-body">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="Something-useful"><a href="#Something-useful" class="headerlink" title="Something useful"></a>Something useful</h1><ol start='' >
-<li>$\lfloor \frac{n}{i}\rfloor$只有$O(\sqrt n)$种取值</li>
-<li>对于$i$，$\left\lfloor\frac{n}{\left\lfloor\frac{n}{i}\right\rfloor}\right\rfloor$是与$i$被$n$除并下取整取值相同的一段区间的右端点</li>
-<li>$\left\lfloor\frac{n}{ab}\right\rfloor=\left\lfloor\frac{\left\lfloor\frac{n}{a}\right\rfloor}{b}\right\rfloor=\left\lfloor\frac{\left\lfloor\frac{n}{b}\right\rfloor}{a}\right\rfloor$</li>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="Something-useful"><a href="#Something-useful" class="headerlink" title="Something useful"></a>Something useful</h1><ol>
+<li><script type="math/tex">\lfloor \frac{n}{i}\rfloor</script>只有<script type="math/tex">O(\sqrt n)</script>种取值</li>
+<li>对于<script type="math/tex">i</script>，<script type="math/tex">\left\lfloor\frac{n}{\left\lfloor\frac{n}{i}\right\rfloor}\right\rfloor</script>是与<script type="math/tex">i</script>被<script type="math/tex">n</script>除并下取整取值相同的一段区间的右端点</li>
+<li><script type="math/tex; mode=display">\left\lfloor\frac{n}{ab}\right\rfloor=\left\lfloor\frac{\left\lfloor\frac{n}{a}\right\rfloor}{b}\right\rfloor=\left\lfloor\frac{\left\lfloor\frac{n}{b}\right\rfloor}{a}\right\rfloor</script></li>
 </ol>
-
-<h1 id="Mobius-function"><a href="#Mobius-function" class="headerlink" title="Möbius function"></a>Möbius function</h1><p>
-用$\mu$表示莫比乌斯函数。
-
-$$n=p_1^{q_1}p_2^{q_2}...p_k^{qk}\\\mu(n)=\begin{cases} 1 & (x=1) &\\ 0 & (\max_{i}^{n} p_i>1) \\ (-1)^{k} & \text{otherwise}\end{cases}$$
-</p>
-
-<p>一个有用的性质
-$$\sum_{d|n}\mu(d)=[n=1]$$
-证明：考虑$d|n$相当于在$n$的因子中选择若干个，然后把这些因子组成的数的$\mu$加起来，如果有一个数的次数大于$1$，$\mu = 0$对答案没有贡献，所以这个$\mu$值只与选择的质因子的个数的奇偶性有关，也就是说只考虑每个质因子是否选择。
-$$\text{if}~~~n =1~~~\mu(1)=1$$
-$$\text{else}~~~n=p_1^{q_1}p_2^{q_2}...p_k^{qk}$$
-$$\sum_{d|n}\mu(d)=\binom{k}{0}-\binom{k}{1}+\binom{k}{2}-\binom{k}{3}...+(-1)^k\binom{k}{k}\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}
-$$
-
-$$
-\because (1+x)^{k}=\sum_{i=0}^{k}\binom{k}{i}x^i
-$$
-$$
-\therefore x=-1\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}=(1+(-1))^k = 0\\
-$$
-</p>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">IL <span class="keyword">void</span> <span class="title">Sieve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; maxn; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!flag[i]) &#123;</span><br><span class="line">            prime[++prime[<span class="number">0</span>]] = i;</span><br><span class="line">            mu[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= prime[<span class="number">0</span>] &amp;&amp; i * prime[j] &lt; maxn; ++j) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = i * prime[j]; flag[v] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> mu[v] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Dirichlet-product"><a href="#Dirichlet-product" class="headerlink" title="Dirichlet product"></a>Dirichlet product</h1><p>记$f,g$为数论函数，定义
-$$h=f*g \rightarrow h(n)=\sum_{d|n, d > 0}f(d)\times g(\frac{n}{d})\\$$
-狄利克雷卷积满足<strong>交换律</strong>，<strong>结合律</strong>和<strong>分配率</strong>。</p>
-
-<h3 id="常见的积性函数"><a href="#常见的积性函数" class="headerlink" title="常见的积性函数:"></a>常见的积性函数:</h3><ol start='' >
-<li>$\mu$，莫比乌斯函数。</li>
-<li>$\varphi$ ，欧拉函数。</li>
-<li>$d$ ，约数个数。$d(n)$表示 $n$ 的约数的个数。</li>
-<li>$\sigma$ ，约数和函数。$\sigma(n)$表示 $n$ 的各个约数之和。</li>
-
+<h1 id="Mobius-function"><a href="#Mobius-function" class="headerlink" title="Möbius function"></a>Möbius function</h1><p>用<script type="math/tex">\mu</script>表示莫比乌斯函数。</p>
+<script type="math/tex; mode=display">n=p_1^{q_1}p_2^{q_2}...p_k^{qk}\\\mu(n)=\begin{cases} 1 & (x=1) &\\ 0 & (\max_{i}^{n} p_i>1) \\ (-1)^{k} & \text{otherwise}\end{cases}</script><p>一个有用的性质</p>
+<script type="math/tex; mode=display">\sum_{d|n}\mu(d)=[n=1]</script><p>证明：考虑<script type="math/tex">d|n</script>相当于在<script type="math/tex">n</script>的因子中选择若干个，然后把这些因子组成的数的<script type="math/tex">\mu</script>加起来，如果有一个数的次数大于<script type="math/tex">1</script>，<script type="math/tex">\mu = 0</script>对答案没有贡献，所以这个<script type="math/tex">\mu</script>值只与选择的质因子的个数的奇偶性有关，也就是说只考虑每个质因子是否选择。</p>
+<script type="math/tex; mode=display">\text{if}~~n =1~\mu(1)=1</script><script type="math/tex; mode=display">\text{else}~~n=p_1^{q_1}p_2^{q_2}...p_k^{qk}</script><script type="math/tex; mode=display">\sum_{d|n}\mu(d)=\binom{k}{0}-\binom{k}{1}+\binom{k}{2}-\binom{k}{3}...+(-1)^k\binom{k}{k}\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}</script><script type="math/tex; mode=display">
+\because (1+x)^{k}=\sum_{i=0}^{k}\binom{k}{i}x^i</script><script type="math/tex; mode=display">
+\therefore x=-1\\\sum_{d|n}\mu(d)=\sum_{i=0}^{k}(-1)^i\binom{k}{i}=(1+(-1))^k = 0\\</script><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">IL <span class="keyword">void</span> <span class="title">Sieve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; maxn; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!flag[i]) &#123;</span><br><span class="line">            prime[++prime[<span class="number">0</span>]] = i;</span><br><span class="line">            mu[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= prime[<span class="number">0</span>] &amp;&amp; i * prime[j] &lt; maxn; ++j) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = i * prime[j]; flag[v] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> mu[v] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Dirichlet-product"><a href="#Dirichlet-product" class="headerlink" title="Dirichlet product"></a>Dirichlet product</h1><p>记<script type="math/tex">f,g</script>为数论函数，定义</p>
+<script type="math/tex; mode=display">h=f*g \rightarrow h(n)=\sum_{d|n, d > 0}f(d)\times g(\frac{n}{d})\\</script><p>狄利克雷卷积满足<strong>交换律</strong>，<strong>结合律</strong>和<strong>分配率</strong>。</p>
+<h3 id="常见的积性函数"><a href="#常见的积性函数" class="headerlink" title="常见的积性函数:"></a>常见的积性函数:</h3><ol>
+<li><script type="math/tex">\mu</script>，莫比乌斯函数。</li>
+<li><script type="math/tex">\varphi</script> ，欧拉函数。</li>
+<li><script type="math/tex">d</script> ，约数个数。<script type="math/tex">d(n)</script>表示 <script type="math/tex">n</script> 的约数的个数。</li>
+<li><script type="math/tex">\sigma</script> ，约数和函数。<script type="math/tex">\sigma(n)</script>表示 <script type="math/tex">n</script> 的各个约数之和。</li>
 </ol>
-
-<h3 id="常见的完全积性函数"><a href="#常见的完全积性函数" class="headerlink" title="常见的完全积性函数:"></a>常见的完全积性函数:</h3><ol start='5' >
-<li>$\epsilon$ ，元函数。 $\epsilon(x)=[x=1]$</li>
-<li>$I$ ，恒等函数。 $I(n)=1$</li>
-<li>$id$ ，单位函数。$id(n)=n$</li>
-
+<h3 id="常见的完全积性函数"><a href="#常见的完全积性函数" class="headerlink" title="常见的完全积性函数:"></a>常见的完全积性函数:</h3><ol>
+<li><script type="math/tex; mode=display">\epsilon$$ ，元函数。 $$\epsilon(x)=[x=1]</script></li>
+<li><script type="math/tex; mode=display">I$$ ，恒等函数。 $$I(n)=1</script></li>
+<li><script type="math/tex; mode=display">id$$ ，单位函数。$$id(n)=n</script></li>
 </ol>
-
-<h3 id="常用的狄利克雷卷积"><a href="#常用的狄利克雷卷积" class="headerlink" title="常用的狄利克雷卷积:"></a>常用的狄利克雷卷积:</h3><script type="math/tex; mode=display">\begin{cases}I * \mu = \epsilon\\\mu * id = \varphi\\I * id = \sigma\\I * I = d\\I * \varphi = id\end{cases}</script><h1 id="Mobius-inversion-formula"><a href="#Mobius-inversion-formula" class="headerlink" title="Möbius inversion formula"></a>Möbius inversion formula</h1><p>
-对于数论函数$f, g$
-$$\begin{aligned}f(n)&=\sum_{d|n}g(d)\\f &= g * I\\f * \mu &= g * I * \mu\\f * \mu &= g * (I * \mu)\\f * \mu &=g * \epsilon\\f * \mu &= g\\\end{aligned}$$
-然后得到了
-$$g(n)=\sum_{d|n}f(d)\times \mu(\frac{n}{d})$$
-对于另一个式子
-$$\begin{aligned}f(n)&=\sum_{n|d}^{d\leq L}g(d)\\g(n)&=\sum_{n|d}^{d\leq L}f(d)\times \mu(\frac{d}{n})\end{aligned}$$
-</p>
-
-<h2 id="Tricks"><a href="#Tricks" class="headerlink" title="Tricks"></a>Tricks</h2><ol start='' >
-<li><p>$\sum_{i=1}^{n}\sum_{j=1}^{m}[(i,j)=d]$</p>
-<p>设$f(d)$表示集合中$(i,j)=d$的倍数的数的$(i,j)$的个数，$g(d)$表示$(i,j)=d$的数的个数（我们要求的答案是$g(d)$）。
-$$\begin{aligned}f(d)&=\lfloor{\frac{n}{d}}\rfloor\lfloor\frac{m}{d}\rfloor\\&=\sum_{d|t}^{\min(n,m)}g(t)\\g(d)&=\sum_{d|t}^{\min(n,m)}f(t) \mu(\frac{t}{d})\\&=\sum_{d|t}^{\min(n,m)}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\mu(\frac{t}{d})\end{aligned}$$
-<strong>小技巧:</strong></p>
-<p>记$\sigma(n)$为$n$的约数个数，因为$I * id = \sigma$</p>
+<h3 id="常用的狄利克雷卷积"><a href="#常用的狄利克雷卷积" class="headerlink" title="常用的狄利克雷卷积:"></a>常用的狄利克雷卷积:</h3><script type="math/tex; mode=display">\begin{cases}I * \mu = \epsilon\\\mu * id = \varphi\\I * id = \sigma\\I * I = d\\I * \varphi = id\end{cases}</script><h1 id="Mobius-inversion-formula"><a href="#Mobius-inversion-formula" class="headerlink" title="Möbius inversion formula"></a>Möbius inversion formula</h1><p>对于数论函数<script type="math/tex">f, g</script></p>
+<script type="math/tex; mode=display">\begin{aligned}f(n)&=\sum_{d|n}g(d)\\f &= g * I\\f * \mu &= g * I * \mu\\f * \mu &= g * (I * \mu)\\f * \mu &=g * \epsilon\\f * \mu &= g\\\end{aligned}</script><p>然后得到了</p>
+<script type="math/tex; mode=display">g(n)=\sum_{d|n}f(d)\times \mu(\frac{n}{d})</script><p>对于另一个式子</p>
+<script type="math/tex; mode=display">\begin{aligned}f(n)&=\sum_{n|d}^{d\leq L}g(d)\\g(n)&=\sum_{n|d}^{d\leq L}f(d)\times \mu(\frac{d}{n})\end{aligned}</script><h2 id="Tricks"><a href="#Tricks" class="headerlink" title="Tricks"></a>Tricks</h2><ol>
+<li><script type="math/tex; mode=display">\sum_{i=1}^{n}\sum_{j=1}^{m}[(i,j)=d]</script><p>设<script type="math/tex">f(d)</script>表示集合中<script type="math/tex">(i,j)=d</script>的倍数的数的<script type="math/tex">(i,j)</script>的个数，<script type="math/tex">g(d)</script>表示<script type="math/tex">(i,j)=d</script>的数的个数（我们要求的答案是<script type="math/tex">g(d)</script>）。</p>
+<script type="math/tex; mode=display">\begin{aligned}f(d)&=\lfloor{\frac{n}{d}}\rfloor\lfloor\frac{m}{d}\rfloor\\&=\sum_{d|t}^{\min(n,m)}g(t)\\g(d)&=\sum_{d|t}^{\min(n,m)}f(t) \mu(\frac{t}{d})\\&=\sum_{d|t}^{\min(n,m)}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\mu(\frac{t}{d})\end{aligned}</script><p><strong>小技巧:</strong></p>
+<p>记<script type="math/tex">\sigma(n)</script>为<script type="math/tex">n</script>的约数个数，因为<script type="math/tex">I * id = \sigma</script></p>
 </li>
 </ol>
-
-<p><p>$$\sigma(nm)=\sum_{i|n}^{n}\sum_{j|m}^{m}[(i,j)=1]$$</p></p>
-<ol start='2' >
-<li><p>$\sum_{i}^{n}\sum_{j=1}^{m}[(i,j)\in \text{Prime}]$
-$$\sum_{p\in Prime}\sum_{p|t}^{\min(n,m)}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\mu(\frac{t}{p})$$
-对于所有$t=p(Prime) \times \frac{t}{p}$，预处理$\text{pre[t]}$。
-$$\begin{aligned}\text{pre[t]}&=\sum_{p|t}\mu(\frac{t}{p})\\ans&=\sum_{t}^{\min(n,m)}\text{pre[t]}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\end{aligned}$$</p>
-<p>预处理$\text{pre}$可以枚举质数然后用调和级数，同时也可以在线筛的时候算。</p>
-<p>考虑$\text{prime[j]} \not| i$，加入$\text{prime[j]}$会让$\mu\to -u$，之前的$f[i]$变为$-f[i]$，贡献为$\mu[i]$，$f[i \times prime[j]]=-f[i]+mu[i]$</p>
-<p>如果$\text{prime[j]}| i$，加入$\text{prime[j]}$让除了$i$的所有因子上有一个$prime[j]^2$，此时$f[i\times prime[j]]=mu[i]$</p>
+<script type="math/tex; mode=display">\sigma(nm)=\sum_{i|n}^{n}\sum_{j|m}^{m}[(i,j)=1]</script><ol>
+<li><script type="math/tex; mode=display">\sum_{i}^{n}\sum_{j=1}^{m}[(i,j)\in \text{Prime}]</script><script type="math/tex; mode=display">\sum_{p\in Prime}\sum_{p|t}^{\min(n,m)}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\mu(\frac{t}{p})</script><p>对于所有<script type="math/tex">t=p(Prime) \times \frac{t}{p}</script>，预处理<script type="math/tex">\text{pre[t]}</script>。</p>
+<script type="math/tex; mode=display">\begin{aligned}\text{pre[t]}&=\sum_{p|t}\mu(\frac{t}{p})\\ans&=\sum_{t}^{\min(n,m)}\text{pre[t]}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\end{aligned}</script><p>预处理<script type="math/tex">\text{pre}</script>可以枚举质数然后用调和级数，同时也可以在线筛的时候算。</p>
+<p>考虑<script type="math/tex">\text{prime[j]} \not| i</script>，加入<script type="math/tex">\text{prime[j]}</script>会让<script type="math/tex">\mu\to -u</script>，之前的<script type="math/tex">f[i]</script>变为<script type="math/tex">-f[i]</script>，贡献为<script type="math/tex">\mu[i]</script>，<script type="math/tex">f[i \times prime[j]]=-f[i]+mu[i]</script></p>
+<p>如果<script type="math/tex">\text{prime[j]}| i</script>，加入<script type="math/tex">\text{prime[j]}</script>让除了<script type="math/tex">i</script>的所有因子上有一个<script type="math/tex">prime[j]^2</script>，此时<script type="math/tex">f[i\times prime[j]]=mu[i]</script></p>
 </li>
-<li><p>$\sum_{i=1}^{n}\sum_{j=1}^{m}(i,j)^k$
-$$\sum_{p}\sum_{p|t}^{\min(n,m)}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\mu(\frac{t}{p})p^k\\\sum_{p}p^k\sum_{p|t}^{\min(n,m)}\mu(\frac{t}{p})\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor$$
-同上，我们可以预处理$\text{pre[t]}$
-$$\text{pre[t]}=\sum_{d|t}d^k\mu(\frac{t}{d})$$
-由于$\mu$是积性函数，$d^k$也是积性函数，所以$pre[t]$是积性函数</p>
-<p>对于$\text{pre}[p^x], p \in \text{Prime}$，由于$\mu(p^2)$以上都是0，对答案无贡献。
-$$\begin{aligned}pre(p^x)&=(p^{x}\cdot\mu(1) + p^{k(x-1)}\cdot \mu(p)) & p \in \text{Prime}\\\end{aligned}$$
-一般地
-$$\begin{aligned}pre(n)&= \sum_{d \mid n}d^k\mu(\frac T d)\\&= \prod_{p_i} pre(p_i^{x_i})\\&= \prod_{p_i} (p_i^{x_i}\cdot\mu(1) + p_i^{k(x_i-1)}\cdot \mu(p_i))\\&= \prod_{p_i} p_i^{k(x_i-1)}(p_i^k-1)\end{aligned}$$</p>
-</li>
-
+<li><script type="math/tex; mode=display">\sum_{i=1}^{n}\sum_{j=1}^{m}(i,j)^k</script><script type="math/tex; mode=display">\sum_{p}\sum_{p|t}^{\min(n,m)}\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor\mu(\frac{t}{p})p^k\\\sum_{p}p^k\sum_{p|t}^{\min(n,m)}\mu(\frac{t}{p})\lfloor{\frac{n}{t}}\rfloor\lfloor\frac{m}{t}\rfloor</script><p>同上，我们可以预处理<script type="math/tex">\text{pre[t]}</script></p>
+<script type="math/tex; mode=display">\text{pre[t]}=\sum_{d|t}d^k\mu(\frac{t}{d})</script><p>由于<script type="math/tex">\mu</script>是积性函数，<script type="math/tex">d^k</script>也是积性函数，所以<script type="math/tex">pre[t]</script>是积性函数</p>
+<p>对于<script type="math/tex">\text{pre}[p^x], p \in \text{Prime}</script>，由于<script type="math/tex">\mu(p^2)</script>以上都是0，对答案无贡献。</p>
+<script type="math/tex; mode=display">\begin{aligned}pre(p^x)&=(p^{x}\cdot\mu(1) + p^{k(x-1)}\cdot \mu(p)) & p \in \text{Prime}\\\end{aligned}</script><p>一般地</p>
+<script type="math/tex; mode=display">\begin{aligned}pre(n)&= \sum_{d \mid n}d^k\mu(\frac T d)\\&= \prod_{p_i} pre(p_i^{x_i})\\&= \prod_{p_i} (p_i^{x_i}\cdot\mu(1) + p_i^{k(x_i-1)}\cdot \mu(p_i))\\&= \prod_{p_i} p_i^{k(x_i-1)}(p_i^k-1)\end{aligned}</script></li>
 </ol>
-
 <h1 id="Du’s-Sieve"><a href="#Du’s-Sieve" class="headerlink" title="Du’s Sieve"></a>Du’s Sieve</h1><ul>
-<li>$\mu$前缀和</li>
+<li><script type="math/tex">\mu</script>前缀和</li>
 </ul>
-
-<p><p>$$\begin{aligned}\sum\limits_{i=1}^n\sum\limits_{d|i}\mu(d)&=1\\\sum\limits_{i=1}^n\sum\limits_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(j)&=1\\\sum_{i=1}^{n}\mu(i)&=1-\sum_{i=2}^{n}\sum_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(j)\end{aligned}$$
-   考虑右边式子，由于是${\left\lfloor\frac{n}{i}\right\rfloor}$，所以只有$\sqrt n$种不同的取值，$\sum_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(j)$是一个前缀和的性质，于是可以递归求，求的过程中用hash表实现记忆化防止复杂度退化。</p></p>
-<p><p>   时间复杂度</p>
-<script type="math/tex; mode=display">\begin{aligned} &\sum_{i=1}^{\sqrt n}O(\sqrt i) + \sum_{i=1}^{n}O(\sqrt \frac{n}{i}) \\ &=O(\int_{1}^{n}\sqrt{\frac{n}{x}}dx)\\ &=O(n^{\frac{3}{4}}) \end{aligned}</script><p>   注意到$n$比较小的时候可以线性筛出来。 </p>
-<script type="math/tex; mode=display">O\left(B+\sum\limits_{i=1}^{\frac nB}\sqrt{\frac ni}\right)=O\left(B+\frac n{\sqrt{B}}\right)</script><p>   根据均值不等式当$B=n^{\frac{2}{3}}$有最低复杂度$O(n^{\frac{2}{3}})$&lt;/p&gt;</p>
+<script type="math/tex; mode=display">\begin{aligned}\sum\limits_{i=1}^n\sum\limits_{d|i}\mu(d)&=1\\\sum\limits_{i=1}^n\sum\limits_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(j)&=1\\\sum_{i=1}^{n}\mu(i)&=1-\sum_{i=2}^{n}\sum_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(j)\end{aligned}</script><p>   考虑右边式子，由于是<script type="math/tex">{\left\lfloor\frac{n}{i}\right\rfloor}</script>，所以只有<script type="math/tex">\sqrt n</script>种不同的取值，<script type="math/tex">\sum_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\mu(j)</script>是一个前缀和的性质，于是可以递归求，求的过程中用hash表实现记忆化防止复杂度退化。</p>
+<p>   时间复杂度</p>
+<script type="math/tex; mode=display">\begin{aligned} &\sum_{i=1}^{\sqrt n}O(\sqrt i) + \sum_{i=1}^{n}O(\sqrt \frac{n}{i}) \\ &=O(\int_{1}^{n}\sqrt{\frac{n}{x}}dx)\\ &=O(n^{\frac{3}{4}}) \end{aligned}</script><p>   注意到<script type="math/tex">n</script>比较小的时候可以线性筛出来。 </p>
+<script type="math/tex; mode=display">O\left(B+\sum\limits_{i=1}^{\frac nB}\sqrt{\frac ni}\right)=O\left(B+\frac n{\sqrt{B}}\right)</script><p>   根据均值不等式当<script type="math/tex">B=n^{\frac{2}{3}}</script>有最低复杂度<script type="math/tex">O(n^{\frac{2}{3}})</script></p>
 <ul>
-<li>$\varphi$前缀和
-$$\begin{aligned}\because \sum_{d|n}\varphi(d)&=n\\\therefore \sum_{i=1}^{n}\sum_{d|i}\varphi(d)&=\sum_{i=1}^{n}\\&=\frac{n(n+1)}{2}\\\sum_{i=1}^{n}\varphi(i)&=\frac{n(n-1)}{2}-\sum_{i=2}^{n}\sum_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\varphi(j)\end{aligned}$$
-做法和复杂度同上。</li>
+<li><script type="math/tex; mode=display">\varphi$$前缀和
+$$\begin{aligned}\because \sum_{d|n}\varphi(d)&=n\\\therefore \sum_{i=1}^{n}\sum_{d|i}\varphi(d)&=\sum_{i=1}^{n}\\&=\frac{n(n+1)}{2}\\\sum_{i=1}^{n}\varphi(i)&=\frac{n(n-1)}{2}-\sum_{i=2}^{n}\sum_{j=1}^{\left\lfloor\frac{n}{i}\right\rfloor}\varphi(j)\end{aligned}</script>做法和复杂度同上。</li>
 </ul>
-
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sieveMu</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; Limit) <span class="keyword">return</span> mu[n];</span><br><span class="line">    <span class="keyword">if</span> (map_mu.<span class="built_in">count</span>(n)) <span class="keyword">return</span> map_mu[n];</span><br><span class="line">    <span class="keyword">int</span> ans = (n &gt;= <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">2</span>, j; i &lt;= n; i = j + <span class="number">1</span>) &#123;</span><br><span class="line">        j = (n / (n / i));</span><br><span class="line">        ans -= <span class="built_in">sieveMu</span>(n / i) * (j - i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> map_mu[n] = ans; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">sievePhi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; Limit) <span class="keyword">return</span> phi[n];</span><br><span class="line">    <span class="keyword">if</span> (map_phi.<span class="built_in">count</span>(n)) <span class="keyword">return</span> map_phi[n];</span><br><span class="line">    ll ans = <span class="number">1ll</span> * n * ((ll)(n) + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">2</span>, j; i &lt;= n; i = j + <span class="number">1</span>) &#123;</span><br><span class="line">        j = (n / (n / i));</span><br><span class="line">        ans -= <span class="number">1ll</span> * <span class="built_in">sievePhi</span>(n / i) * (j - i + <span class="number">1</span>); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> map_phi[n] = ans; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
@@ -310,7 +266,7 @@ $$\begin{aligned}\because \sum_{d|n}\varphi(d)&=n\\\therefore \sum_{i=1}^{n}\sum
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2024-01-30 00:49:59
+              2024-02-05 20:49:28
             </span>
             
                   <span class="post-categories">

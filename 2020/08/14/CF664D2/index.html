@@ -95,19 +95,23 @@
     <ul>
       
         <li class="nav-item" data-path="/">
-          <a href="/">Home</a>
+          <a href="/">主页</a>
         </li>
       
         <li class="nav-item" data-path="/archives/">
-          <a href="/archives/">Archives</a>
+          <a href="/archives/">归档</a>
         </li>
       
         <li class="nav-item" data-path="/categories/">
-          <a href="/categories/">Categories</a>
+          <a href="/categories/">分类</a>
         </li>
       
         <li class="nav-item" data-path="/tags/">
-          <a href="/tags/">Tags</a>
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
         </li>
       
     </ul>
@@ -170,7 +174,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2024-01-30 00:50:26
+          2024-02-05 20:53:09
         </span>
         
               <span class="post-categories">
@@ -216,7 +220,7 @@
 <h1 id="B-Boboniu-Plays-Chess"><a href="#B-Boboniu-Plays-Chess" class="headerlink" title="B. Boboniu Plays Chess"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1395/problem/B">B. Boboniu Plays Chess</a></h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给出一个矩阵，有一个棋子（走法同国际象棋中的车），给出矩阵的大小和棋子的初始位置，输出把每个位置走一遍，要求输出路径。</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这题没啥好说的，看代码就行了。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x; <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x); <span class="keyword">return</span> x;    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> LOCAL</span></span><br><span class="line">        <span class="built_in">freopen</span>(<span class="string">&quot;1.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    <span class="keyword">int</span> n = <span class="built_in">read</span>(), m = <span class="built_in">read</span>(), x = <span class="built_in">read</span>(), y = <span class="built_in">read</span>();</span><br><span class="line">    cout &lt;&lt; x &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) <span class="keyword">if</span> (i != x) cout &lt;&lt; i &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; y &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == y) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (t &amp; <span class="number">1</span>) <span class="keyword">for</span> (<span class="keyword">int</span> j = n; j &gt;= <span class="number">1</span>; --j) cout &lt;&lt; j &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j) cout &lt;&lt; j &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">        t++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="奇怪的东西"><a href="#奇怪的东西" class="headerlink" title="奇怪的东西"></a>奇怪的东西</h1><p>比赛的时候写的假算法是一直往一个方向走，然后把$4!$种方向的排列都试验一下。</p>
+<h1 id="奇怪的东西"><a href="#奇怪的东西" class="headerlink" title="奇怪的东西"></a>奇怪的东西</h1><p>比赛的时候写的假算法是一直往一个方向走，然后把<script type="math/tex">4!</script>种方向的排列都试验一下。</p>
 <p>然后愉快的FST on test45</p>
 <p>错的原因是没用到这个题的性质，然后我发现有些情况按照我的想法是没有可行的方案的。</p>
 <p>那么有了这么一个问题：</p>
@@ -244,14 +248,14 @@
 <li><p>半哈密顿图(semi- Hamiltonian)：有哈密顿通路的图</p>
 </li>
 </ul>
-<h3 id="无向图中的必要条件"><a href="#无向图中的必要条件" class="headerlink" title="无向图中的必要条件"></a>无向图中的必要条件</h3><p>无向图<script type="math/tex">G=<V,E></script>是哈密顿图，则$V$的任意非空真子集$V_1$有</p>
+<h3 id="无向图中的必要条件"><a href="#无向图中的必要条件" class="headerlink" title="无向图中的必要条件"></a>无向图中的必要条件</h3><p>无向图<script type="math/tex">G=<V,E></script>是哈密顿图，则<script type="math/tex">V</script>的任意非空真子集<script type="math/tex">V_1</script>有</p>
 <script type="math/tex; mode=display">
-p(G-V_1)\leq |V_1|</script><p>其中$p(G-V_1)$表示图G删去V1后的联通分支数。</p>
+p(G-V_1)\leq |V_1|</script><p>其中<script type="math/tex">p(G-V_1)</script>表示图G删去V1后的联通分支数。</p>
 <p>如果是半哈密顿图则有</p>
 <script type="math/tex; mode=display">
 p(G-V_1)\leq |V1| + 1</script><p>由于没学过太多的图论知识，这个东西好像不太好证明，但是可以考虑：如果是Hamiltonian/semi-Hamiltonian删除相邻的，剩下的联通数一点是最大的，但是不会大于|V1|。</p>
 <p><a href="/images/CF664D2/b3.PNG" class="gallery-item"><img src="/images/CF664D2/b3.PNG" alt=""></a></p>
-<h2 id="回到这题"><a href="#回到这题" class="headerlink" title="回到这题"></a>回到这题</h2><p>知道这个以后，可以发现，在长宽都是奇数的矩阵里面，只要删除$(n\times m -1)/2 $个点，那么矩阵中剩下$(n\times m - 1)/2 + 1$个点，但是为了规定起点，所以要新建一个点，只要这个点链接了被删除的点中的一个，那么就又多了一个联通分支，也就是说比删除的点的个数多了$2$个，这个不符合半哈密顿图的必要条件。</p>
+<h2 id="回到这题"><a href="#回到这题" class="headerlink" title="回到这题"></a>回到这题</h2><p>知道这个以后，可以发现，在长宽都是奇数的矩阵里面，只要删除<script type="math/tex">(n\times m -1)/2</script>个点，那么矩阵中剩下<script type="math/tex">(n\times m - 1)/2 + 1</script>个点，但是为了规定起点，所以要新建一个点，只要这个点链接了被删除的点中的一个，那么就又多了一个联通分支，也就是说比删除的点的个数多了<script type="math/tex">2</script>个，这个不符合半哈密顿图的必要条件。</p>
 <p><a href="/images/CF664D2/b.PNG" class="gallery-item"><img src="/images/CF664D2/b.PNG" alt=""></a></p>
 <p>正因如此，类似这种（1，2）（2，1），在行列都为奇数的矩阵中，以行列和为奇数的点作为起点，不存在哈密顿路径。</p>
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
@@ -274,7 +278,7 @@ p(G-V_1)\leq |V1| + 1</script><p>由于没学过太多的图论知识，这个�
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2024-01-30 00:50:26
+              2024-02-05 20:53:09
             </span>
             
                   <span class="post-categories">
